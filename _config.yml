@@ -31,7 +31,7 @@ markdown: kramdown
 kramdown: 
   input: GFM
   syntax_highlighter: rouge
-theme: minima
+# theme: minima
 encoding: utf-8
 plugins:
   - jekyll-feed

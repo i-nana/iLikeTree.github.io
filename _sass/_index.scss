@@ -1,0 +1,35 @@
+// 首页 index
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    /* background: rgb(24, 31, 36); */
+    background: url(../images/LuciolaCruciata_1920x1080.jpg) bottom center no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    // background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+.nav {
+    margin-left: 50px;
+    .nav-item {
+        padding: 0 20px;
+        color: #fff;
+        line-height: 45px;
+        font-size: 13px;
+    }
+}
