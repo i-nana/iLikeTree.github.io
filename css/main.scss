@@ -1,0 +1,23 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// Our variables
+$base-font-family: "Helvetical Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+$base-font-size:   14px;
+$base-font-weight: 400;
+$base-line-height: 1.5;
+$text-color: #454545;
+$background-color: #fff;
+$spacing-unit: 20;
+$code-font-family: "Source Code Pro",Consolas,Menlo,Monaco,"Courier New",monospace;
+$brand-color: #ff9696;
+
+
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "base",
+        "layout"
+;
