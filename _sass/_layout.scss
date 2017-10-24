@@ -69,3 +69,28 @@
         height: 25px;
     }
 }
+
+.archive-main {
+    width: 960px;
+    margin-left: 240px;
+}
+.post-list {
+    li {
+        list-style: none;
+    }
+    h2 {
+        font-size: 16px;
+        line-height: 32px;
+        font-weight: normal;
+        a {
+            color: $text-color;
+        }
+    }
+    .post-icon-translate {
+        background-color: rgba(86,192,224,0.25);
+        color: #56C0E0;
+        font-size: 12px;
+        padding: 2px 10px;
+        border-radius: 10px;
+    }
+}
