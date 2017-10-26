@@ -9,7 +9,7 @@ $base-font-size:   14px;
 $base-font-weight: 400;
 $base-line-height: 1.5;
 $text-color: #454545;
-$background-color: #fff;
+$background-color: #fffff9;
 $spacing-unit: 20;
 $code-font-family: "Source Code Pro",Consolas,Menlo,Monaco,"Courier New",monospace;
 $brand-color: #1c2237;
@@ -19,5 +19,6 @@ $brand-color: #1c2237;
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "base",
-        "layout"
+        "layout",
+        "syntax-highlighting"
 ;
