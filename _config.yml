@@ -36,7 +36,7 @@ kramdown:
 encoding: utf-8
 plugins:
   - jekyll-feed
-  - jekyll-paginate
+#  - jekyll-paginate
 
 # 分页设置
 # paginate: 5

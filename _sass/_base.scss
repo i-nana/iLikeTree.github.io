@@ -2,9 +2,6 @@ body,h1,h3,h3,h4,h5,h6,hr,p,blockquote,dl, dt,dd,ul,ol,li,pre,form,fieldset,lege
     margin: 0;
     padding: 0;
 }
-html {
-    font-size: 16px;
-}
 body {
     font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
     color: $text-color;
@@ -52,19 +49,19 @@ h1, h2, h3, h4, h5, h6{
     line-height: 2;
 }
 h1{
-    font-size: 24px;
+    font-size: 1.75rem;
 }
 h2{
-    font-size: 20px;
+    font-size: 1.5rem;
 }
 h3{
-    font-size: 18px;
+    font-size: 1.25rem;
 }
 h4{
-    font-size: 16px;
+    font-size: 1rem;
 }
 h5{
-    font-size: 14px;
+    font-size: .75rem;
 }
 a {
     color: $brand-color;
@@ -136,6 +133,6 @@ hr{
     }
 }
 
-%hide{
+.hide{
   display: none;
 }

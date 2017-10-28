@@ -1,12 +1,7 @@
 // 首页 index
-.clearfix:after {
-    content: ".";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden
+html {
+    font-size: 20px;
 }
-
 .container {
     position: absolute;
     top: 0;
@@ -17,19 +12,60 @@
     background-size: cover;
     overflow: hidden;
 }
-
-header {
-    position: fixed;
-    width: 100%;
+.canvas {
+    position: absolute;
     top: 0;
-    // background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
-.nav {
-    margin-left: 50px;
-    .nav-item {
-        padding: 0 20px;
+.content {
+    position: relative;
+    top: 45%;
+    transform: translateY(-50%);
+    color: #fff;
+    
+    text-align: center;
+    h1, p {
+        font-family: 'Libian SC', $base-font-family;
+        text-shadow: 0 0 2px rgba(0, 0, 0, .64); 
+    }
+    h1{
+        font-weight: normal;
+
+        span {
+            font-size: 60%;
+        }
+    }
+    p {
+        font-size: .75rem;
+    }
+    .btn-enter {
+        display: block;
+        margin: 24px auto;
+        width: 160px;
+        line-height: 2;
+        font-size: 12px;
+        padding: 4px 12px;
+        border-radius: 18px;
+        background: rgba(0, 0, 0, 0.5);
+        letter-spacing: 2px;
+        border: 1px solid;
         color: #fff;
-        line-height: 45px;
-        font-size: 13px;
+
+        &:hover {
+            color: $brand-color;
+        }
+    }
+}
+
+.footer {
+    position: absolute;
+    right: 2rem;
+    bottom: 0;
+    color: #fff;
+    opacity: .8;
+    font-size: 12px;
+    text-align: right;
+    padding-bottom: 1rem;
+    a {
+        font-weight: bold;
     }
 }

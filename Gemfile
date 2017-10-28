@@ -28,5 +28,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # 分页
-gem 'jekyll-paginate'
+# gem 'jekyll-paginate'
 
