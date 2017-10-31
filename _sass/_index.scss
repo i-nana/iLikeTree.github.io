@@ -1,6 +1,6 @@
 // 首页 index
 html {
-    font-size: 20px;
+    font-size: 24px;
 }
 .container {
     position: absolute;
@@ -63,10 +63,16 @@ html {
     bottom: 0;
     color: #fff;
     opacity: .8;
-    font-size: 12px;
+    font-size: .5rem;
     text-align: right;
     padding-bottom: 1rem;
     a {
         font-weight: bold;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    html {
+        font-size: 20px;
     }
 }
