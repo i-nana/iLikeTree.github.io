@@ -42,7 +42,7 @@
         list-style: none;
         &.active {
             &:before {
-                content:"";
+                content: "";
                 display: block;
                 position: absolute;
                 width: 2px;
@@ -137,9 +137,6 @@
 .main {
     margin: 0 100px;
     max-width: 900px;
-    &.main-right {
-        margin: 0 50px 0 400px;
-    }
 }
 
 .post {
@@ -190,6 +187,9 @@
         padding-top: 12px;
         font-size: 1rem;
         line-height: 1.4;
+    }
+    h4 {
+        padding: 6px 0 0;
     }
     p {
         margin-bottom: 6px;
@@ -244,6 +244,26 @@
         ul li {
             font-size: 13px;
             list-style: none;
+        }
+    }
+}
+
+.main.article {
+    margin-right: 250px;
+}
+
+.article #markdown-toc {
+    position: fixed;
+    width: 210px;
+    right: 15px;
+    height: 100%;
+    &>li {
+        list-style: none;
+    }
+    a {
+        color: #7685b6;
+        &:hover {
+            color: #009688;
         }
     }
 }

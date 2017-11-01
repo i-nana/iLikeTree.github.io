@@ -60,12 +60,11 @@ html {
 .footer {
     position: absolute;
     right: 2rem;
-    bottom: 0;
+    bottom: 1rem;
     color: #fff;
     opacity: .8;
     font-size: .5rem;
     text-align: right;
-    padding-bottom: 1rem;
     a {
         font-weight: bold;
     }
@@ -74,5 +73,9 @@ html {
 @media screen and (max-width: 750px) {
     html {
         font-size: 20px;
+    }
+    .footer {
+        right: .7rem;
+        bottom: .6rem;
     }
 }

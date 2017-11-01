@@ -1,11 +1,14 @@
 ---
 layout: post
-title:  笔记
-date:   2015-03-18
+title:  JavaScript碎片笔记
+date:   2016-01-01
 categories: coding
 tags: Javascript
 description: ''
 ---
+
+- 目录
+{:toc}
 
 ### 1. JavaScript 获取伪类元素（pseudo-element）属性
 

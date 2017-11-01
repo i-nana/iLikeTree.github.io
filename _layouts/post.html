@@ -1,13 +1,10 @@
 --- 
 layout: default
 ---
-<div class="side">
-    <div class="side-content">
-        <div id="side-menu" class="post-content side-menu"></div>
+<div class="main article">
+    <div class="article-header">
+
     </div>
-</div>
-<div class="main main-right article">
-    <div class="article-header"></div>
     <h2 class="post-title">
         <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ page.title }}</a>
         {% if page.translate %}
@@ -25,13 +22,13 @@ layout: default
     </div>
 </div>
 <script>
-(function(){
-    var toc = document.getElementById('markdown-toc');
-    if(!toc) return;
-    var sideMenu = document.getElementById('side-menu');
-    if(sideMenu) {
-        sideMenu.innerHTML = '<h3>目录</h3>' + toc.innerHTML;
-        toc.remove();
-    }
-})();
+// (function(){
+//     var toc = document.getElementById('markdown-toc');
+//     if(!toc) return;
+//     var sideMenu = document.getElementById('side-menu');
+//     if(sideMenu) {
+//         sideMenu.innerHTML = '<h3>目录</h3>' + toc.innerHTML;
+//         toc.remove();
+//     }
+// })();
 </script>
