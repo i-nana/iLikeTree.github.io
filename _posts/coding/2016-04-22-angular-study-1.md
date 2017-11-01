@@ -3,7 +3,7 @@ layout: post
 title: Angular
 tags: [Angular, JavaScript]
 date:   2016-04-22
-categories: coding
+categories: code
 ---
 
 - 目录
@@ -95,7 +95,7 @@ AngularJS 表达式写在双大括号内： `\{\{\}\}`，与 ng-bind 指令的�
 ``` html
 <div ng-app="myApp" ng-controller="myCtrl">
     Your Name: <input type="text" ng-model="name" placeholder="world">
-    Hello {{yourname || 'World'}}!
+    Hello { { yourname || 'World' }}!
 </div>
 <script>
     var app = angular.module("myApp", []);
@@ -116,9 +116,9 @@ ng-model 指令可以为应用数据提供状态值(invalid, dirty, touched, err
     Email: <input type="email" name="myAddress" ng-model="myText" required>
     <p ng-show="myForm.myAddress.$error.email">这不是一个合法的邮箱地址</p>
     <h1>状态</h1>
-    <p>Valid: {{myForm.myAddress.$valid}} (如果输入的值是合法的则为 true)。</p>
-    <p>Dirty: {{myForm.myAddress.$dirty}} (如果值改变则为 true)。</p>
-    <p>Touched: {{myForm.myAddress.$touched}} (如果通过触屏点击则为 true)。</p>
+    <p>Valid: { { myForm.myAddress.$valid }} (如果输入的值是合法的则为 true)。</p>
+    <p>Dirty: { { myForm.myAddress.$dirty }} (如果值改变则为 true)。</p>
+    <p>Touched: { { myForm.myAddress.$touched }} (如果通过触屏点击则为 true)。</p>
 </form>
 ```
 

@@ -2,7 +2,7 @@
 layout: post
 title:  JavaScript碎片笔记
 date:   2016-01-01
-categories: coding
+categories: code
 tags: Javascript
 description: ''
 ---
