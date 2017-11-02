@@ -4,6 +4,7 @@ title: 浅析js实现网页截图的两种方式
 date: 2017-08-03
 categories: code
 tags: [JavaScript, SVG]
+repost: true
 ---
 
 > 原文：[罗辑思维前端团队:浅析js实现网页截图的两种方式](http://f2e.luojilab.org/qian-xi-jsshi-xian-wang-ye-jie-tu-de-liang-chong-fang-shi/)

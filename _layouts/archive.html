@@ -16,6 +16,9 @@ layout: default
                 {% if post.translate %}
                 <span class="post-icon-translate">译</span>
                 {% endif %}
+                {% if post.repost %}
+                <span class="post-icon-repost">转</span>
+                {% endif %}
             </h2>
             <p class="post-meta">
                 <time>{{ post.date | date: "%B %d, %Y" }}</time>
