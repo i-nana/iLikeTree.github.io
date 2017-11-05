@@ -1,0 +1,49 @@
+--- 
+layout: default
+---
+<div class="main article">
+    <!-- <div class="article-header" id="douban-movie" data-id="{{ page.movieID }}">
+        <div class="subject">
+            <div class="subject-pic" style="background-image: url(http://img3.doubanio.com/view/photo/s_ratio_poster/public/p2418455758.jpg)"></div>
+            <div class="subject-main">
+                <h4>春宵苦短，少女前进吧！</h4>
+            </div>
+        </div>
+    </div> -->
+    <h2 class="post-title">
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ page.title }}</a>
+        {% if page.translate %}
+        <span class="post-icon post-icon-translate">译</span>
+        {% endif %}
+        {% if page.repost %}
+        <span class="post-icon post-icon-repost">转</span>
+        {% endif %}
+    </h2>
+    <p class="post-meta">
+        <time>{{ page.date | date: "%B %d, %Y" }}</time>
+        {% for tag in page.tags %}
+        <a href="javascript: void(0);" class="post-tag">#{{ tag }}</a>
+        {% endfor %}
+    </p>
+    <div class="post-content">
+        {{ page.content }}
+    </div>
+</div>
+<!-- <script>
+    var movie = document.getElementById('douban-movie');
+    var movieID = movie.getAttribute('data-id');
+    console.log(movie, movieID, 111)
+    $.ajax({
+        type: "get",
+        async: false,
+        url: "http://api.douban.com/v2/movie/subject/" + movieID ,
+        dataType: "jsonp",
+        jsonp: "callback",
+        success: function(res){
+            console.log(res)
+        },
+        error: function(error){
+           console.log('ERROR：' + error)
+        }
+    });
+</script> -->

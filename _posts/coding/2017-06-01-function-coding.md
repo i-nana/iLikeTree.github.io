@@ -2,9 +2,9 @@
 layout: post
 title:  函数式编程
 date:   2017-06-01
-categories: coding
+categories: code
 tags: [JavaScript]
-description: ''
+translate: true
 ---
 
 1. 什么是函数式编程

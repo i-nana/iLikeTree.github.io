@@ -3,12 +3,14 @@ layout: default
 ---
 <div class="main article">
     <div class="article-header">
-
     </div>
     <h2 class="post-title">
         <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ page.title }}</a>
         {% if page.translate %}
-        <span class="post-icon-translate">译</span>
+        <span class="post-icon post-icon-translate">译</span>
+        {% endif %}
+        {% if page.repost %}
+        <span class="post-icon post-icon-repost">转</span>
         {% endif %}
     </h2>
     <p class="post-meta">
@@ -21,14 +23,3 @@ layout: default
         {{ page.content }}
     </div>
 </div>
-<script>
-// (function(){
-//     var toc = document.getElementById('markdown-toc');
-//     if(!toc) return;
-//     var sideMenu = document.getElementById('side-menu');
-//     if(sideMenu) {
-//         sideMenu.innerHTML = '<h3>目录</h3>' + toc.innerHTML;
-//         toc.remove();
-//     }
-// })();
-</script>

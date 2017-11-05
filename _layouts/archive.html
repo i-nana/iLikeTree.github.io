@@ -14,10 +14,10 @@ layout: default
             <h2 class="post-title">
                 <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
                 {% if post.translate %}
-                <span class="post-icon-translate">译</span>
+                <span class="post-icon post-icon-translate">译</span>
                 {% endif %}
                 {% if post.repost %}
-                <span class="post-icon-repost">转</span>
+                <span class="post-icon post-icon-repost">转</span>
                 {% endif %}
             </h2>
             <p class="post-meta">
