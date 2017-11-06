@@ -1,14 +1,18 @@
-<header class="header fold" id="header">
+<header class="header" id="header">
 	<div class="header-content">
-		<a href="javascript: void(0);" id="avatar">
+		<a href="javascript: void(0);" id="avatar" class="avatar">
 			<img class="avatar-img" src="http://wx2.sinaimg.cn/mw690/82d84e71ly8fkydrduqqdj20m80m8k4n.jpg">
 		</a>
-		<ul class="menu" id="menu">
-			<li><a href="/"><i class="iconfont icon-home">&#xe632;</i><span>首页</span></a></li>
-			<li><a href="/coding/"><i class="iconfont icon-code">&#xe6f3;</i><span>技术学习</span></a></li>
-			<li><a href="/daily/"><i class="iconfont icon-daily">&#xe636;</i><span>日常</span></a></li>
-			<li><a href="/"><i class="iconfont icon-demo">&#xe6e9;</i><span>实验室</span></a></li>
-			<li><a href="/"><i class="iconfont icon-me">&#xe635;</i><span>关于</span></a></li>
+		<ul class="menu clear" id="menu">
+			<li><a href="/" class="nav-home"><i class="iconfont">&#xe632;</i><span>首页</span></a></li>
+			<li class="active"><a href="/coding/" class="nav-code"><i class="iconfont">&#xe6f3;</i><span>学习</span></a></li>
+			<li><a href="/daily/" class="nav-daily"><i class="iconfont">&#xe636;</i><span>日常</span></a></li>
+			<!-- <li><a href="/" class="nav-demo"><i class="iconfont">&#xe6e9;</i><span>实验室</span></a></li> -->
+			<li><a href="/" class="nav-me"><i class="iconfont">&#xe635;</i><span>关于</span></a></li>
 		</ul>
+		<form class="search-form" method="post" action="javascript: return true;" onsubmit="return false;">
+			<input class="search-input" type="search" autocomplete="off" placeholder="搜索一下吧~">
+		</form>
+		
 	</div>
 </header>
