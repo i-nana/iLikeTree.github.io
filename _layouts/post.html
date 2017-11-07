@@ -2,24 +2,26 @@
 layout: default
 ---
 <div class="main article">
-    <div class="article-header">
-    </div>
-    <h2 class="post-title">
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ page.title }}</a>
-        {% if page.translate %}
-        <span class="post-icon post-icon-translate">译</span>
-        {% endif %}
-        {% if page.repost %}
-        <span class="post-icon post-icon-repost">转</span>
-        {% endif %}
-    </h2>
-    <p class="post-meta">
-        <time>{{ page.date | date: "%B %d, %Y" }}</time>
-        {% for tag in page.tags %}
-        <a href="javascript: void(0);" class="post-tag">#{{ tag }}</a>
-        {% endfor %}
-    </p>
-    <div class="post-content">
-        {{ page.content }}
+    <div class="content">
+        <div class="article-header">
+        </div>
+        <h2 class="post-title">
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ page.title }}</a>
+            {% if page.translate %}
+            <span class="post-icon post-icon-translate">译</span>
+            {% endif %}
+            {% if page.repost %}
+            <span class="post-icon post-icon-repost">转</span>
+            {% endif %}
+        </h2>
+        <p class="post-meta">
+            <time>{{ page.date | date: "%B %d, %Y" }}</time>
+            {% for tag in page.tags %}
+            <a href="javascript: void(0);" class="post-tag">#{{ tag }}</a>
+            {% endfor %}
+        </p>
+        <div class="post-content">
+            {{ page.content }}
+        </div>
     </div>
 </div>

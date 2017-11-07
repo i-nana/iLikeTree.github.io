@@ -11,17 +11,17 @@ layout: default
                 <span class="r"></span>
             </a>
             <a class="tab" href="/coding/" data-cate="coding">
-                <span class="n">笔记</span>
+                <span class="n">学习</span>
                 <span class="l"></span>
                 <span class="r"></span>
             </a>
             <a class="tab" href="/daily/" data-cate="daily">
-                <span class="n">笔记</span>
+                <span class="n">面试题</span>
                 <span class="l"></span>
                 <span class="r"></span>
             </a>
             <a class="tab" href="/hi/">
-                <span class="n">笔记</span>
+                <span class="n">整理</span>
                 <span class="l"></span>
                 <span class="r"></span>
             </a>
@@ -46,7 +46,7 @@ layout: default
                     {% endfor %}
                 </p>
                 <div class="post-content">
-                    {{ post.content | strip_html | strip_newlines | truncate: 150 }}
+                    {{ post.content | strip_html | strip_newlines | truncate: 200 }}
                 </div>
             </li>
             {% endfor %}

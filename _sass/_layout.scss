@@ -1,3 +1,12 @@
+body {
+    position: absolute;
+    width: 100%;
+    min-height: 100%;
+}
+.container {
+    padding-top: 45px;
+    padding-bottom: 60px;
+}
 .header {
     position: fixed;
     top: 0;
@@ -23,16 +32,19 @@
 
 
 .header-content {
-    margin: 0 auto;
+    margin: 0 30px;
     a {
         color: #7685b6;
     }
 }
 
 @media screen and (min-width: 1280px) {
-    .header-content, .main {
+    .main {
         width: 1120px;
-    }    
+    } 
+    .main.article {
+        width: 960px;
+    }
 }
 
 .menu {
@@ -161,13 +173,13 @@
 }
 
 .menu-categories {
-    margin: 20px 0 10px;
+    margin-top: 20px;
     border-radius: 3px;
     overflow: hidden;
     .tab-empty {
         margin-left: 240px;
         margin-right: 0;
-        height: 34px;
+        height: 38px;
         background: #fff;
     }
     .tab {
@@ -182,8 +194,8 @@
             background: #fff;
 
             &.n {
-                padding-top: 8px;
-                padding-bottom: 2px;
+                padding-top: 10px;
+                padding-bottom: 4px;
             }
             &.l, &.r {
                 position: relative;
@@ -228,7 +240,6 @@
 
 .main {
     margin: 0 auto;
-    padding-top: 45px;
 }
 
 .post {
@@ -283,8 +294,8 @@
 .post-content {
     margin-top: 10px;
     line-height: 1.65;
-    color: #777;
-    font-size: .6rem;
+    color: #555;
+    font-size: 13px;
     h2 {
         font-size: 1.2rem;
     }
@@ -375,9 +386,21 @@
 }
 
 .content {
-    width: 840px;
+    margin: 0 320px 0 0;
 }
-
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 1.8;
+    padding: 10px 0;
+    color: #333;
+    font-weight: 300;
+    p{
+        font-size: 10px;
+    }
+}
 @media screen and (max-width: 1024px) {
     #markdown-toc{
         display: none;
