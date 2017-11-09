@@ -2,7 +2,7 @@
 layout: post
 title:  Vue 自定义指令以及懒加载v-lazyload的实现
 date:   2017-08-14
-categories: code
+categories: study
 tags: [Javascript, Vue]
 ---
 

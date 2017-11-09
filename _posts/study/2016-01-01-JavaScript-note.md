@@ -2,7 +2,7 @@
 layout: post
 title:  JavaScript碎片笔记
 date:   2016-01-01
-categories: code
+categories: study
 tags: Javascript
 description: ''
 ---
@@ -30,7 +30,6 @@ getComputedStyle：只读，返回所有属性值
 
 style：可读可写，只返回css中的属性值
 
----
 
 ### 2. 添加、删除类
 
@@ -67,4 +66,60 @@ window.addEventListener('onorientationchange' in window ? 'orientationchange' : 
 @media all and (orientation: landscape) { }
 /* 横屏 */
 @media all and (orientation: portrait) { }
+```
+
+### 4. 英文首字母大写
+
+``` javascript
+var newVal = value.chartAt(0).toUppercase() + value.slice(1);
+```
+
+### 5. 设备检测
+
+``` javascript
+// 手否是手机
+var isMobile = !!(navigator.userAgent.match(/(iPhone)|(iPod)|(iPad)|(android)|(webOS)/i));
+
+// 微信浏览器
+var isWeChatBrowser = !!navigator.userAgent.match(/MicroMessenger/ig);
+```
+
+### 6.判断对象是否为空
+
+``` javascript
+function isEmptyObject(obj) {
+    obj = obj ? obj : {};
+    for (var i in obj){
+        if(obj.hasOwnProperty(i)){
+            return !1;
+        }
+    }
+    return !0;
+}
+```
+
+### 7. 日期格式化
+
+``` javascript
+Date.prototype.format = function(format) {
+    var date = {
+        "M+": this.getMonth() + 1,
+        "d+": this.getDate(),
+        "h+": this.getHours(),
+        "m+": this.getMinutes(),
+        "s+": this.getSeconds(),
+        "q+": Math.floor((this.getMonth() + 3) / 3),
+        "S+": this.getMilliseconds()
+    };
+    if (/(y+)/i.test(format)) {
+        format = format.replace(RegExp.$1, (this.getFullYear() + '').substr(4 - RegExp.$1.length));
+    }
+    for (var k in date) {
+        if (new RegExp("(" + k + ")").test(format)) {
+            format = format.replace(RegExp.$1, RegExp.$1.length == 1
+                    ? date[k] : ("00" + date[k]).substr(("" + date[k]).length));
+        }
+    }
+    return format;
+};
 ```

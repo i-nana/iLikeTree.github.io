@@ -2,7 +2,7 @@
 layout: post
 title: 浅析js实现网页截图的两种方式
 date: 2017-08-03
-categories: code
+categories: study
 tags: [JavaScript, SVG]
 repost: true
 ---

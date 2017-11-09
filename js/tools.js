@@ -19,3 +19,10 @@ function toggleClass(elements, cName) {
         elements.className += " " + cName;
     }
 }
+
+function adaptation() {
+    var isMobile = !!(navigator.userAgent.match(/(iPhone)|(iPod)|(iPad)|(android)|(webOS)/i));
+    if (isMobile) {
+        addClass(documen.body, 'm');
+    }
+}

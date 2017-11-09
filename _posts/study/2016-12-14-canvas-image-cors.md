@@ -1,10 +1,9 @@
 ---
 layout: post
-title:  "Canvas 跨域图片加载"
+title:  Canvas 跨域图片加载
 date:   2016-12-14
-categories: coding
-tags: [Javascript]
-description: ''
+categories: study
+tags: [JavaScript, canvas]
 ---
 
 今天利用 ECharts 做加图片水印的时候，遇到一些问题，故作此记录。
@@ -83,7 +82,7 @@ option = {
         }
     ]
 };
-``` 
+```
 
 此时，点击右上角的下载按钮，可以正常下载生成的ECharts图到本地。
 
@@ -104,7 +103,6 @@ option = {
 
 #### 2. 设置图片`crossOrigin`属性为`anonymous` 【HTML5】
 
-
 `img: crossorigin`这个枚举属性表明是否必须使用 CORS 完成相关图像的抓取
 
 - `anonymous`: 执行一个跨域的请求（比如，有 Origin: HTTP header）。但是没有发送证书（比如，没有 cookie，没有 X.509 证书，没有 HTTP 基本的授权认证）。如果服务器没有给源站证书（没有设置 Access-Control-Allow-Origin: HTTP头），图像会被污染而且它的使用会被限制。
@@ -123,4 +121,4 @@ img.onload = function() {
     var dataURL = myCanvas.toDataURL("image/png");
     console.log(dataURL); // 成功获取地址
 };
-``` 
+```

@@ -2,7 +2,7 @@
 layout: post
 title: 递归和尾递归
 date:   2017-05-07
-categories: coding
+categories: study
 tags: [JavaScript]
 ---
 

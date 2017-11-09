@@ -76,11 +76,10 @@ Module._private;    // undefined
 
 
 ``` javascript
-var md = (function(){ 
-    function foo(){ 
+var md = (function(){
+    function foo(){
         console.log('a');
     }
-    return foo; 
+    return foo;
 })();
 ```
-

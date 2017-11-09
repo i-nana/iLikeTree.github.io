@@ -3,8 +3,7 @@ layout: post
 title: 前端性能优化
 tags: [JavaScript, CSS, 前端开发]
 date:   2016-03-19
-categories: coding
-description: ''
+categories: study
 ---
 
 ## 一、浏览器如何渲染页面

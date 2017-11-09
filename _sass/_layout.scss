@@ -2,6 +2,7 @@ body {
     position: absolute;
     width: 100%;
     min-height: 100%;
+    min-width: 750px;
 }
 .container {
     padding-top: 45px;
@@ -33,83 +34,11 @@ body {
 
 .header-content {
     margin: 0 30px;
-    a {
-        color: #7685b6;
-    }
-}
-
-@media screen and (min-width: 1280px) {
-    .main {
-        width: 1120px;
-    } 
-    .main.article {
-        width: 960px;
-    }
 }
 
 .menu {
     float: left;
-    li {
-        float: left;
-        overflow: hidden;
-        line-height: 45px;
-        font-size: 13px;
-        margin-right: 12px;
-        list-style: none;
-
-        a {
-            position: relative;
-            display: block;
-            padding: 0 12px 0 6px;
-
-            &:before{
-                content: "";
-                display: block;
-                position: absolute;
-                left: 50%;
-                bottom: 0;
-                height: 0;
-                width: 100%;
-                background: rgba(255, 255, 255, 0);
-                transition: linear .25s;
-                opacity: 0;
-
-                transform: translate(-50%) scaleX(0);
-                -webkit-transform: translate(-50%) scaleX(0);
-                -moz-transform: translate(-50%) scaleX(0);
-                -o-transform: translate(-50%) scaleX(0);
-                -ms-transform: translate(-50%) scaleX(0);
-            }
-        }
-        &.active, &:hover {
-            a:before {
-                height: 2px;
-                opacity: 1;
-
-                transform: translate(-50%) scaleX(1);
-                -webkit-transform: translate(-50%) scaleX(1);
-                -moz-transform: translate(-50%) scaleX(1);
-                -o-transform: translate(-50%) scaleX(1);
-                -ms-transform: translate(-50%) scaleX(1);
-            }
-            .nav-home:before  {
-                background: #443fb5;
-            }
-            .nav-code:before  {
-                background: #1195db;
-            }
-            .nav-daily:before  {
-                background: #FF9800;
-            }
-            .nav-demo:before  {
-                background: #009688;
-            }
-            .nav-me:before  {
-                background: #ff4d4d;
-            }
-        
-        }
-    }
+    
     .nav-home {
         color: #443fb5;
     }
@@ -125,16 +54,79 @@ body {
     .nav-me {
         color: #ff4d4d;
     }
+}
+.menu-item {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    float: left;
+    width: 25%;
+    overflow: hidden;
+    line-height: 45px;
+    font-size: 13px;
+
+    &:before{
+        content: "";
+        display: block;
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        height: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0);
+        transition: linear .25s;
+        opacity: 0;
+
+        transform: translate(-50%) scaleX(0);
+        -webkit-transform: translate(-50%) scaleX(0);
+        -moz-transform: translate(-50%) scaleX(0);
+        -o-transform: translate(-50%) scaleX(0);
+        -ms-transform: translate(-50%) scaleX(0);
+    }
+    &.active, &:hover {
+        &:before {
+            height: 2px;
+            opacity: 1;
+
+            transform: translate(-50%) scaleX(1);
+            -webkit-transform: translate(-50%) scaleX(1);
+            -moz-transform: translate(-50%) scaleX(1);
+            -o-transform: translate(-50%) scaleX(1);
+            -ms-transform: translate(-50%) scaleX(1);
+        }
+        &.nav-home:before  {
+            background: #443fb5;
+        }
+        &.nav-code:before  {
+            background: #1195db;
+        }
+        &.nav-daily:before  {
+            background: #FF9800;
+        }
+        &.nav-demo:before  {
+            background: #009688;
+        }
+        &.nav-me:before  {
+            background: #ff4d4d;
+        }
+    }
 
 
     .iconfont {
-        float: left;
-        margin: 11px 2px 0 0;
+        position: absolute;
+        left: 0;
+        margin-top: 11px;
         font-size: 23px;
         line-height: 1;
     }
-}
 
+    &>div {
+        position: relative;
+        margin: 0 auto;
+        padding-left: 25px;
+        width: 28px;
+    }
+}
 
 .search-form {
     float: right;
@@ -260,8 +252,24 @@ body {
 }
 
 .article {
+    background: #fff;
     .post-title {
         font-size: 24px;
+    }
+    #markdown-toc {
+        position: fixed;
+        width: 210px;
+        right: 15px;
+        height: 100%;
+        &>li {
+            list-style: none;
+        }
+        a {
+            color: #7685b6;
+            &:hover {
+                color: #009688;
+            }
+        }
     }
 }
 
@@ -303,6 +311,7 @@ body {
         padding-top: 12px;
         font-size: 1rem;
         line-height: 1.4;
+        font-family: Tahoma, 'STKaiti', 'KaiTi', $base-font-family;
     }
     h4 {
         padding: 6px 0 0;
@@ -366,27 +375,8 @@ body {
     }
 }
 
-.main.article {
-    margin-right: 250px;
-}
-.article #markdown-toc {
-    position: fixed;
-    width: 210px;
-    right: 15px;
-    height: 100%;
-    &>li {
-        list-style: none;
-    }
-    a {
-        color: #7685b6;
-        &:hover {
-            color: #009688;
-        }
-    }
-}
-
 .content {
-    margin: 0 320px 0 0;
+    padding: 15px 45px;
 }
 footer{
     position: absolute;
@@ -401,6 +391,16 @@ footer{
         font-size: 10px;
     }
 }
+@media screen and (min-width: 1366px) {
+    .main {
+        width: 1190px;
+    }
+} 
+@media screen and (min-width: 1280px) { 
+    .main.article {
+        width: 960px;
+    }
+}
 @media screen and (max-width: 1024px) {
     #markdown-toc{
         display: none;
@@ -409,4 +409,27 @@ footer{
 
 .article-header {
     padding: 20px;
+}
+@media screen and (min-width: 751px) {
+    .menu-item {
+        width: 64px;
+        margin-right: 12px;
+    }
+}
+@media screen and (max-width: 750px) {
+    .header-content {
+        margin: 0;
+    }
+    .header .avatar, .search-form{
+        display: none;
+    }
+    .menu{
+        float: none;
+        li{
+            box-sizing: border-box;
+            width: 25%;
+            margin-right: 0;
+            padding: 0;
+        }
+    } 
 }

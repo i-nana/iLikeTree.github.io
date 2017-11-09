@@ -2,9 +2,8 @@
 layout: post
 title:  几个经典排序算法的JavaScript实现
 date:   2017-01-01
-categories: coding
-tags: [sort,javascript]
-description: '几个经典排序算法的JavaScript实现'
+categories: study
+tags: [javaScript]
 ---
 
 > http://math.hws.edu/eck/jsdemo/sortlab.html

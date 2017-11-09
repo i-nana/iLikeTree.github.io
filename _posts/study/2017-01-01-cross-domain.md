@@ -2,7 +2,7 @@
 layout: post
 title:  跨域的几种解决方式
 date:   2017-01-01
-categories: coding
+categories: study
 tags: [JavaScript]
 ---
 

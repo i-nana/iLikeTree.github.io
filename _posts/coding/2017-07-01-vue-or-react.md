@@ -4,7 +4,6 @@ title:  VUE vs. REACT
 date:   2017-07-01
 categories: coding
 tags: Javascript
-description: 明知山有釜，偏向釜山行。安东
 ---
 
 ## React 还是 Vue: 你应该选择哪一个Web前端框架？
