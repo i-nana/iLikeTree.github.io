@@ -6,9 +6,9 @@ categories: question
 tags: JavaScript
 ---
 
-#### 1.创建、添加、删除、移动、复制和查找节点
+### 1.创建、添加、删除、移动、复制和查找节点
 
-##### DOM（Document Object Model），文档对象模型，DOM是由节点（node）组成的节点树
+#### DOM（Document Object Model），文档对象模型，DOM是由节点（node）组成的节点树
 
 + getElementById(id)
 + getElementsByTagName(tagName)
@@ -63,7 +63,7 @@ function getElementsByClassName(node, classname){
 
 
 
-#### 2. 数组去重
+### 2. 数组去重
 
 + __indexOf__
 
@@ -98,7 +98,7 @@ let oldArr = [1, 2, 3, 5, 3, 1];
 let newArr = [...new Set(arr1)];
 ```
 
-#### 3. 数组排序
+### 3. 数组排序
 
 几个经典排序算法的JavaScript实现
 
@@ -119,7 +119,7 @@ arr.sort(function(x, y){
 
 > arr.reverse() 逆序
 
-#### 4. 不使用循环的方式实现数组前十项求和。
+### 4. 不使用循环的方式实现数组前十项求和。
 
 此题考察的是“__递归__”
 
@@ -171,7 +171,7 @@ Array.prototype.sum = function (len) {
 arr.sum(10);    // 55
 ```
 
-#### 5. 生成长度为100的数组，插入1-100以内的但均不重复的随机数
+### 5. 生成长度为100的数组，插入1-100以内的但均不重复的随机数
 
 > 扩展阅读： [5分钟现场撸代码——谈总结会抽奖程序](https://www.h5jun.com/post/luckey-draw-in-5-minutes.html)
 >
@@ -257,7 +257,7 @@ function shuffle(start, end){
 }
 ```
 
-#### 6. 不借助临时变量，进行两个整数替换
+### 6. 不借助临时变量，进行两个整数替换
 ``` javascript
 function swap(a, b){
     b = b - a;
@@ -268,11 +268,119 @@ function swap(a, b){
 ```
 + 利用ES6的 解构赋值 __Destructuring assignment__：`[a, b] = [b, a]`
 
-#### 7. caller，callee，apply
+### 7. caller，callee，call、apply，以及bind
 
-#### 8. 一次完整的HTTP事务是怎样一个过程？
++ callee
 
-#### 9. 随机生成指定长度的随机字符串
+在函数内部，有两个特殊的对象：`arguments`和`this`。`this`引用的是函数所在执行的环境对象。比如在全局作用域中调用函数，则该函数的this对象引用的就是window。`arguments`是一个类数组对象，包含出入函数的所有参数，它有一个名为`callee`的属性，该属性是一个指针，指向拥有这个arguments对象的函数。使用`arguments.callee()`，我们可以调用函数自身，这有利于（匿名函数的）递归或者保证函数的封装性。
+
+比如说定义一个阶乘函数。
+
+``` javascript
+function factorial(num) {
+    if(num <= 1) {
+        return 1;
+    } else {
+        return num * factorial(num - 1);
+    }
+}
+
+// 利用 arguments.callee() 重写
+function factorial(num) {
+    if(num <= 1) {
+        return 1;
+    } else {
+        return num * arguments.callee(num - 1);
+    }
+}
+```
+
+利用`arguments.callee()`重写后，消除了函数名`factorial`和函数执行的紧密耦合，无论引用函数时使用的是什么名字，都能保证正常完成递归。
+
+另外，我们还可以利用callee验证形参和实参的长度是否一致。`arguments.length`是实参的长度，`arguments.callee.length`是形参的长度。
+
+__在函数的严格模式下，访问`arguments.callee`会导致错误。__
+
+
++ caller
+
+`caller`是一个函数对象的属性，该属性中保存着调用当前函数的函数的引用，如果在全局作用域中调用当前函数，他的值为`null`。
+
+``` javascript
+function outer(){
+	inner();
+}
+function inner(){
+	console.log(inner.caller);
+}
+outer();    // 输出outer函数体
+inner();    // null
+```
+
++ call 和 apply
+
+`call`和`apply`这两个方法都是在特定的作用域中调用函数，实际上等于设置函数体内的this对象的值。
+
+`call`和`apply`都接收两个参数：第一个是在其中运行函数的作用域，另一个是函数参数，不同的是，`apply`的第二个参数是数组形式，`call`的第二个参数必须是逐个列举出来。
+
+``` javascript
+function sum(num1, num2) {
+    return num1 + num2;
+}
+
+function applySum(num1, num2) {
+    return sum.apply(this, arguments);
+}
+
+function callSum(num1, num2) {
+    return sum.call(this, num1, num2);
+}
+
+applySum(1, 2);     // 3
+callSum(1, 2);      // 3
+
+```
+如果用`call`或者`apply`应用另一个函数（类）后，当前的函数（类）就具备了另一个函数（类）的方法或者属性，也就是所谓的“继承”。所以，利用`call`和`apply`能够动态改变this值的特性，我们可以简单的实现继承。
+
+``` javascript
+function Person(name, age){
+    console.log(arguments.callee.caller)
+    this.name = name;
+    this.age = age;
+    this.say = function() {
+        console.log(this.name + '的年龄：' + this.age);
+    }
+}
+
+function Student(name, age, sexy) {
+    Person.call(this, name, age);
+    this.sexy = sexy;
+}
+
+var tom = new Student('Tom', 10, 'boy');
+// Student构造函数中调用了Person构造函数，所以Person中的console.log会输出Student函数
+
+tom.say();      // Tom的年龄：10
+```
+
++ bind()
+
+`bind()`也可以动态的改变this值，但和`apply()`和`call()`不同，这个方法会创建一个函数实例，这个函数实例的this值会被绑定到传给bind()函数的值。最主要的是，这个实例函数不会立即执行。
+
+``` javascript
+var o = { color: 'red' };
+function sayColor() {
+    console.log(this.color);
+}
+
+var iColor = sayColor.bind(o);
+sayColor(); // undefined
+iColor();   // red
+```
+
+### 8. 一次完整的HTTP事务是怎样一个过程？
+
+### 9. 随机生成指定长度的随机字符串
 
 ``` javascript
 function randomStr(n){
@@ -287,7 +395,7 @@ function randomStr(n){
 }
 ```
 
-#### 10. 函数声明 和 函数表达式 的区别
+### 10. 函数声明 和 函数表达式 的区别
 
 + 函数声明
 
@@ -325,7 +433,7 @@ __'function' 关键字什么时候用作“表达式”，什么时候又用作�
 
 解析器会认为它是语句中的一部分，把它提升为函数表达式。
 
-#### 11. 实现一个clone函数，可以将JavaScript中的5中主要的数据类型（包括Number、String、Object、Array、Boolean）进行值复制。
+### 11. 实现一个clone函数，可以将JavaScript中的5中主要的数据类型（包括Number、String、Object、Array、Boolean）进行值复制。
 
 ``` javascript
 // 递归
@@ -370,7 +478,7 @@ Object.prototype.clone = function(){
 }
 ```
 
-#### 12. 代码如下
+### 12. 代码如下
 
 ``` javascript
 var s = "test";
@@ -390,17 +498,17 @@ function bar() {
     function foo() {}
 }
 bar();
-console.log(foo); 
+console.log(foo);
 ```
 
 + __答案__：1
 + __解析__：函数体内`function foo() {}`变量声明提升，所以`foo=10`的`foo`是函数体内的局部变量，函数执行完毕局部变量`foo`被销毁
 
-#### 13. window对象 和 document 对象
+### 13. window对象 和 document 对象
 
 + BOM 的核心对象是 window，它表示浏览器的一个实例。在浏览器中， window 对象有双重角色，它既是通过 JavaScript 访问浏览器窗口的一个接口，又是 ECMAScript 规定的 Global 对象。这意味着在网页中定义的任何一个对象、变量和函数，都以 window 作为其 Global 对象，因此有权访问parseInt()等方法。
 
-+
++ 
 
 ---
 
