@@ -1,3 +1,6 @@
+html {
+    font-size: 20px;
+}
 body {
     position: absolute;
     width: 100%;
@@ -17,7 +20,7 @@ body {
     background: rgba(255, 255, 255, .84);
     font-size: 14px;
     transition: width .5s linear;
-    border-bottom: 1px solid #efefef;
+    border-bottom: 1px solid #eef;
     z-index: 100;
     .avatar{
         position: absolute;
@@ -43,16 +46,16 @@ body {
         color: #443fb5;
     }
     .nav-code {
-        color: #1195db;
+        color: $code-color;
     }
     .nav-daily {
         color: #FF9800;
     }
     .nav-demo {
-        color: #009688;
+        color: $brand-inverse-color;
     }
     .nav-me {
-        color: #ff4d4d;
+        color: $brand-color;
     }
 }
 .menu-item {
@@ -98,16 +101,16 @@ body {
             background: #443fb5;
         }
         &.nav-code:before  {
-            background: #1195db;
+            background: $code-color;
         }
         &.nav-daily:before  {
             background: #FF9800;
         }
         &.nav-demo:before  {
-            background: #009688;
+            background: $brand-inverse-color;
         }
         &.nav-me:before  {
-            background: #ff4d4d;
+            background: $brand-color;
         }
     }
 
@@ -136,7 +139,7 @@ body {
     .search-input {
         background-color: #f5f8fa;
         border-radius: 21px;
-        border: 1px solid #e6ecf0;
+        border: 1px solid #eef;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
         display: block;
@@ -149,20 +152,11 @@ body {
 
         &:focus {
             background: #fff;
-            border-color: #ff4d4d;
+            border-color: $brand-color;
         }
     }
 }
 
-.side {
-    position: fixed;
-    width: 300px;
-    height: 100%;
-    left: 50px;
-    top: 0;
-    background: center #212943;
-    background-size: cover;
-}
 
 .menu-categories {
     margin-top: 20px;
@@ -220,7 +214,7 @@ body {
         }
 
         &.on {
-            color: #ff4d4d;
+            color: $brand-color;
             span {
                 &.l, &.r {
                     width: 24px;
@@ -245,7 +239,7 @@ body {
     &:hover {
         .post-title {
             a {
-                color: #3f51b5;
+                color: $brand-inverse-color;
             }
         }
     }
@@ -267,7 +261,7 @@ body {
         a {
             color: #7685b6;
             &:hover {
-                color: #009688;
+                color: $brand-inverse-color;
             }
         }
     }
@@ -279,7 +273,7 @@ body {
     line-height: 32px;
     font-weight: normal;
     a {
-        color: $text-color;
+        color: $brand-color;
     }
 }
 
@@ -291,18 +285,17 @@ body {
 
     &.post-icon-translate {
         background-color: #e5f6f6;
-        color: #30a0de;
+        color: $code-color;
     }
     &.post-icon-repost {
         background: #ffe6e6;
-        color: #ff4d4d;
+        color: $brand-color;
     }
 }
 
 .post-content {
     margin-top: 10px;
     line-height: 1.65;
-    color: #555;
     font-size: 13px;
     h2 {
         font-size: 1.2rem;
@@ -312,11 +305,12 @@ body {
         font-size: 1rem;
         line-height: 1.4;
         font-family: Tahoma, 'STKaiti', 'KaiTi', $base-font-family;
+        color: $brand-color;
     }
     h4 {
         padding: 6px 0 0;
+        font-size: .7rem;
         font-weight: 300;
-        color: #333;
     }
     p {
         margin: 2px 0;
@@ -335,11 +329,11 @@ body {
         border-collapse: collapse;
         border-spacing: 0;
         th {
-            background: #e3ebec;
+            background: #f5f7fa;
         }
         th,
         td {
-            border: 1px solid #E6E6E6;
+            border: 1px solid #eef;
             padding: 5px 8px;
             word-break: normal;
         }
@@ -353,26 +347,7 @@ body {
 
 .post-tag {
     margin-left: 12px;
-    color: #009688;
-}
-
-.side-content {
-    margin: 60px 15px 0;
-    color: #fff;
-}
-
-.side-menu {
-    color: #fff;
-    a {
-        color: #fff;
-    }
-    &>li {
-        font-size: 14px;
-        ul li {
-            font-size: 13px;
-            list-style: none;
-        }
-    }
+    color: $brand-inverse-color;
 }
 
 .content {
@@ -385,7 +360,6 @@ footer{
     text-align: center;
     line-height: 1.8;
     padding: 10px 0;
-    color: #333;
     font-weight: 300;
     p{
         font-size: 10px;

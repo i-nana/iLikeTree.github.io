@@ -12,13 +12,14 @@ $text-color: #454545;
 $background-color: #e6ecf0;
 $spacing-unit: 20px;
 $code-font-family: "Source Code Pro",Consolas,Menlo,Monaco,"Courier New",monospace;
-$brand-color: #1c2237;
+$brand-color: #ff4d4d;
+$brand-inverse-color: #009688;
+$code-color: #1195db;
+$hr-color: #eef;
 
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "base",
-        "layout",
-        "syntax-highlighting"
-;
+        "layout";
