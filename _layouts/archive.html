@@ -1,7 +1,9 @@
 --- 
 layout: default 
 --- 
-
+<div class="banner" id="banner">
+    <div class="banner-background"></div>
+</div>
 <div class="main">
     <div class="content">
         <div class="menu-categories clear" id="menu-categories">
@@ -61,6 +63,33 @@ layout: default
             if(menuA[i].href === window.location.href) {
                 menuA[i].className = 'tab on';
             }
+        }
+
+        getBingWallpaper();
+        function getBingWallpaper(){
+            var wallpaper = localStorage.getItem('bing_wallpaper');
+            if(wallpaper && JSON.parse(wallpaper).enddate === new Date().format('yyyyMMdd')) {
+                setBingWallpaper(JSON.parse(wallpaper));
+                return;
+            }
+            $.ajax({
+                url: "https://bing.ioliu.cn/v1/?type=json",
+                type: "GET",
+                dataType: "jsonp",
+                success: function(res) {
+                    console.log(res);
+                    if(!res.status.code === 200 || !res.data) return;
+                    localStorage.setItem('bing_wallpaper', JSON.stringify(res.data));
+                    setBingWallpaper(res.data);
+                }
+            })
+        }
+
+        function setBingWallpaper(data) {
+            var $banner = $('#banner').find('.banner-background');
+            $banner.css({
+                'background-image': 'url('+data.url+')'
+            });
         }
     })()
 </script>

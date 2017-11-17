@@ -32,6 +32,22 @@ body {
         width: 45px;
         height: 45spx;
     }
+
+    &.top {
+        height: 100px;
+        background: url(../images/head_top_mask.png) top left repeat-x;
+        border-bottom: none;
+
+        .menu-item {
+            color: #fff;
+
+            &.active:before, &:hover:before {
+                background: #fff;
+                height: 1px;
+                bottom: 6px;
+            }
+        }
+    }
 }
 
 
@@ -75,7 +91,7 @@ body {
         left: 50%;
         bottom: 0;
         height: 0;
-        width: 100%;
+        width: 64%;
         background: rgba(255, 255, 255, 0);
         transition: linear .25s;
         opacity: 0;
@@ -174,7 +190,7 @@ body {
         width: 60px;
         text-align: center;
         font-size: 12px;
-
+        color: $text-color;
         span {
             display: block;
             background: #fff;
@@ -223,6 +239,23 @@ body {
         }
     }
 }
+
+
+.banner {
+    position: relative;
+    height: 540px;
+    margin-top: -45px;
+    background: #fff;
+}
+.banner-background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 
 .main {
     margin: 0 auto;
