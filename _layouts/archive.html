@@ -2,33 +2,35 @@
 layout: default 
 --- 
 <div class="banner" id="banner">
-    <div class="banner-background"></div>
+    <div class="banner-background" data-depth="0.1"></div>
+</div>
+<div class="menu-categories clear" id="menu-categories">
+    <div class="main">
+        <a class="tab" href="/all/" data-cate="coding">
+            <span class="n">全部</span>
+            <span class="l"></span>
+            <span class="r"></span>
+        </a>
+        <a class="tab" href="/study/" data-cate="coding">
+            <span class="n">学习</span>
+            <span class="l"></span>
+            <span class="r"></span>
+        </a>
+        <a class="tab" href="/questions/" data-cate="question">
+            <span class="n">题库</span>
+            <span class="l"></span>
+            <span class="r"></span>
+        </a>
+        <a class="tab" href="/hi/">
+            <span class="n">整理</span>
+            <span class="l"></span>
+            <span class="r"></span>
+        </a>
+        <div class="tab-empty"></div>
+    </div>
 </div>
 <div class="main">
     <div class="content">
-        <div class="menu-categories clear" id="menu-categories">
-            <a class="tab" href="/all/" data-cate="coding">
-                <span class="n">全部</span>
-                <span class="l"></span>
-                <span class="r"></span>
-            </a>
-            <a class="tab" href="/study/" data-cate="coding">
-                <span class="n">学习</span>
-                <span class="l"></span>
-                <span class="r"></span>
-            </a>
-            <a class="tab" href="/questions/" data-cate="question">
-                <span class="n">题库</span>
-                <span class="l"></span>
-                <span class="r"></span>
-            </a>
-            <a class="tab" href="/hi/">
-                <span class="n">整理</span>
-                <span class="l"></span>
-                <span class="r"></span>
-            </a>
-            <div class="tab-empty"></div>
-        </div>
         <ul class="post-list">
             {% for post in site.categories[ page.categories ] %}
             <li class="post">
@@ -55,10 +57,11 @@ layout: default
         </ul>
     </div>
 </div>
+<!-- <script src="/js/parallax.min.js"></script> -->
 <script>
     (function(){
         var menuCate = document.getElementById('menu-categories');
-        var menuA = menuCate.children;
+        var menuA = menuCate.querySelectorAll('.tab');
         for(var i=0, len = menuA.length; i<len; i++) {
             if(menuA[i].href === window.location.href) {
                 menuA[i].className = 'tab on';
@@ -87,9 +90,28 @@ layout: default
 
         function setBingWallpaper(data) {
             var $banner = $('#banner').find('.banner-background');
+            data.url = '/images/mainvisual.jpg';
             $banner.css({
                 'background-image': 'url('+data.url+')'
             });
+            addScrollListener();
+            $(window).scroll(addScrollListener);
+        }
+
+        function addScrollListener() {
+            var $banner = $('#banner').find('.banner-background');
+            var top = $(window).scrollTop();
+            var x = top * 0.5;
+            if(top >= 225) {
+                $('#header').removeClass('top');
+            } else {
+                $('#header').addClass('top');
+            }
+            if(top <= 450) {
+                $banner.css({
+                    'backgroundPositionY': x + 'px'
+                });
+            }
         }
     })()
 </script>

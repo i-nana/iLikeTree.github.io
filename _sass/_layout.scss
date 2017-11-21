@@ -19,9 +19,10 @@ body {
     background: #fff;
     background: rgba(255, 255, 255, .84);
     font-size: 14px;
-    transition: width .5s linear;
-    border-bottom: 1px solid #eef;
     z-index: 100;
+
+    -webkit-transition: background .15s linear;
+    transition: background .15s linear;
     .avatar{
         position: absolute;
         top: 0;
@@ -34,13 +35,10 @@ body {
     }
 
     &.top {
-        height: 100px;
         background: url(../images/head_top_mask.png) top left repeat-x;
-        border-bottom: none;
-
         .menu-item {
             color: #fff;
-
+            text-shadow: 0 0 2px rgba(0, 0, 0, .64);
             &.active:before, &:hover:before {
                 background: #fff;
                 height: 1px;
@@ -175,9 +173,9 @@ body {
 
 
 .menu-categories {
-    margin-top: 20px;
-    border-radius: 3px;
-    overflow: hidden;
+    .main{
+        overflow: hidden;
+    }
     .tab-empty {
         margin-left: 240px;
         margin-right: 0;
@@ -243,9 +241,9 @@ body {
 
 .banner {
     position: relative;
-    height: 540px;
+    height: 450px;
     margin-top: -45px;
-    background: #fff;
+    background-color: #ca341f;
 }
 .banner-background {
     position: absolute;
@@ -398,14 +396,19 @@ footer{
         font-size: 10px;
     }
 }
+@media screen and (min-width: 1440px) {
+    .main {
+        width: 1280px;
+    }
+}
 @media screen and (min-width: 1366px) {
     .main {
         width: 1190px;
     }
 } 
 @media screen and (min-width: 1280px) { 
-    .main.article {
-        width: 960px;
+    .main {
+        width: 1080px;
     }
 }
 @media screen and (max-width: 1024px) {
