@@ -10,6 +10,9 @@ body {
 .container {
     padding-top: 45px;
     padding-bottom: 60px;
+    .main {
+        background: #fff;
+    }
 }
 .header {
     position: fixed;
@@ -18,11 +21,11 @@ body {
     height: 45px;
     background: #fff;
     background: rgba(255, 255, 255, .84);
+    background-position: bottom left;
     font-size: 14px;
     z-index: 100;
-
-    -webkit-transition: background .15s linear;
-    transition: background .15s linear;
+    -webkit-transition:height 0s, background .15s linear .1s;
+    transition:height 0s, background .15s linear .1s;
     .avatar{
         position: absolute;
         top: 0;
@@ -35,7 +38,10 @@ body {
     }
 
     &.top {
-        background: url(../images/head_top_mask.png) top left repeat-x;
+        height: 100px;
+        background: url(../images/head_top_mask.png) top left repeat-x transparent;
+        -webkit-transition:height 0s, background 0s;
+        transition:height 0s, background 0s;
         .menu-item {
             color: #fff;
             text-shadow: 0 0 2px rgba(0, 0, 0, .64);
@@ -249,9 +255,9 @@ body {
     position: absolute;
     height: 100%;
     width: 100%;
-    background-position: center 0;
+    background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size:auto 454px;
 }
 
 
@@ -265,8 +271,7 @@ body {
     padding: 20px;
     background: #fff;
     margin: 10px 0;
-    border-radius: 3px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, .12);
+    border-top: 1px solid #f5f8fa;
     &:hover {
         .post-title {
             a {
@@ -384,6 +389,10 @@ body {
 .content {
     padding: 15px 45px;
 }
+.article-header {
+    padding: 20px;
+}
+
 footer{
     position: absolute;
     bottom: 0;
@@ -396,30 +405,7 @@ footer{
         font-size: 10px;
     }
 }
-@media screen and (min-width: 1440px) {
-    .main {
-        width: 1280px;
-    }
-}
-@media screen and (min-width: 1366px) {
-    .main {
-        width: 1190px;
-    }
-} 
-@media screen and (min-width: 1280px) { 
-    .main {
-        width: 1080px;
-    }
-}
-@media screen and (max-width: 1024px) {
-    #markdown-toc{
-        display: none;
-    }
-}
 
-.article-header {
-    padding: 20px;
-}
 @media screen and (min-width: 751px) {
     .menu-item {
         width: 64px;
@@ -442,4 +428,26 @@ footer{
             padding: 0;
         }
     } 
+}
+
+@media screen and (max-width: 1024px) {
+    #markdown-toc{
+        display: none;
+    }
+}
+@media screen and (min-width: 1280px) { 
+    .main {
+        width: 1080px;
+    }
+
+}
+@media screen and (min-width: 1366px) {
+    .main {
+        width: 1190px;
+    }
+}
+@media screen and (min-width: 1440px) {
+    .main {
+        width: 1280px;
+    }
 }

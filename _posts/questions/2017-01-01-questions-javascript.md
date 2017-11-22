@@ -380,6 +380,13 @@ iColor();   // red
 
 ### 8. 一次完整的HTTP事务是怎样一个过程？
 
++ 域名解析
++ 发起TCP的3次握手
++ 建立TCP连接后发起HTTP请求
++ 服务器端相应HTTP请求，浏览器得到HTML代码
++ 浏览器解析HTML代码，并请求HTML中的资源
++ 浏览器将页面渲染，呈现给用户
+
 ### 9. 随机生成指定长度的随机字符串
 
 ``` javascript
@@ -462,10 +469,17 @@ function clone(param){
                         o.push(param[i]);
                     }
                 } else {
-                    
+                    o = {};
+                    for(var k in obj) {
+                        o[k] = clone(obj[k]);
+                    }
                 }
             }
+            break;
+        default:
+            o = obj;
     }
+    return o;
 }
 
 Object.prototype.clone = function(){
@@ -512,7 +526,7 @@ console.log(foo);
 
 ---
 
-### `XML`和`JSON`的区别？
+### 14. `XML`和`JSON`的区别？
 
 (1).数据体积方面。
 
@@ -531,6 +545,16 @@ JSON对数据的描述性比XML较差。
 JSON的速度要远远快于XML。
 
 ---
+
+### cookie 和session 的区别：
+
++ cookie数据存放在客户的浏览器上，session数据放在服务器上。
++ cookie不是很安全，别人可以分析存放在本地的COOKIE并进行COOKIE欺骗。考虑到安全应当使用session。
++ session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能。考虑到减轻服务器性能方面，应当使用COOKIE。
++ 单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie。
+
+---
+
 
 ### 谈谈你对webpack的看法
 

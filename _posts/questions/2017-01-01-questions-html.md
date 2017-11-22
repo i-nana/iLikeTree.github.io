@@ -43,42 +43,6 @@ tags: HTML
 
 ---
 
-### 什么是盒子模型
-
-#### 标准盒子模型和IE盒子模型
-
-在一个文档中，每一个元素都可以被表示成一个矩形的盒子。每个盒子都有四部分组成：从content、padding、border、margin。
-
-在IE盒子模型中，content是包含padding和border的。边框border和内边距padding的值是包含在width中的，内容content的实际宽度 = width - padding - border。
-
-![](/images/boxModuleW3C.jpg)
-![](/images/boxModuleIE.jpg)
-
-#### box-sizing
-
-使用`box-sizing`属性，我们可以控制元素的尺寸是按标准盒子模型还是IE盒子模型。默认值为`content-box`，即标准盒子模型。
-
-``` css
-box-sizing: content-box | border-box ;
-```
-
-我们可以将所有元素的box-sizing设置为border-content
-
-``` css
-*, *:before, *:after {
-  /* Chrome 9-, Safari 5-, iOS 4.2-, Android 3-, Blackberry 7- */
-  -webkit-box-sizing: border-box;
-
-  /* Firefox (desktop or Android) 28- */
-  -moz-box-sizing: border-box;
-
-  /* Firefox 29+, IE 8+, Chrome 10+, Safari 5.1+, Opera 9.5+, iOS 5+, Opera Mini Anything, Blackberry 10+, Android 4+ */
-  box-sizing: border-box;
-}
-```
-
----
-
 ### 什么是行内元素和块级元素，有什么区别？什么是空元素？
 
 + 行内元素（inline element）：`span`、`a`、`img`、`b`、`i`等
@@ -108,6 +72,7 @@ __优雅降级 （Graceful degradation）__：一开始就构建完整的功能�
 + link 引用CSS时，在页面加载时同时加载；@important 需要页面网页完全载入以后加载
 + link 是XHTML标签，无兼容问题；@important 是在CSS 2.1 提出的，低版本的浏览器不支持
 + link 支持使用JavaScript控制DOM去改变样式；@important 不支持
++ link方式的样式的权重高于@import的权重.
 
 ---
 
