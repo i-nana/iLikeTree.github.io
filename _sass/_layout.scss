@@ -9,6 +9,7 @@ body {
 .container {
     padding-top: 45px;
     padding-bottom: 60px;
+    transform: translateX(240px) translateY(0) translateZ(0);
     .main {
         background: #fff;
     }
@@ -16,16 +17,11 @@ body {
 .header {
     position: fixed;
     top: 0;
-    width: 100%;
-    height: 45px;
+    width: 240px;
+    height: 100%;
     background: #fff;
-    background: rgba(255, 255, 255, .84);
-    background-position: bottom left;
     font-size: 14px;
-    box-shadow: 0 1px 3px rgba(0,0,0,.18);
     z-index: 100;
-    -webkit-transition:height 0s, background .15s linear .1s;
-    transition:height 0s, background .15s linear .1s;
     .avatar{
         position: absolute;
         top: 0;
@@ -34,24 +30,7 @@ body {
     }
     .avatar-img {
         width: 45px;
-        height: 45spx;
-    }
-
-    &.top {
-        height: 100px;
-        background: url(../images/head_top_mask.png) top left repeat-x transparent;
-        -webkit-transition:height 0s, background 0s;
-        transition:height 0s, background 0s;
-        box-shadow: none;
-        .menu-item {
-            color: #fff;
-            text-shadow: 0 0 2px rgba(0, 0, 0, .64);
-            &.active:before, &:hover:before {
-                background: #fff;
-                height: 1px;
-                bottom: 6px;
-            }
-        }
+        height: 45px;
     }
 }
 
@@ -62,7 +41,6 @@ body {
 
 .menu {
     float: left;
-    
     .nav-home {
         color: #443fb5;
     }
@@ -79,44 +57,29 @@ body {
         color: $brand-color;
     }
 }
+
 .menu-item {
     position: relative;
     display: block;
     box-sizing: border-box;
-    float: left;
-    width: 25%;
     overflow: hidden;
-    line-height: 45px;
+    line-height: 20px;
     font-size: 13px;
 
     &:before{
         content: "";
         display: block;
         position: absolute;
-        left: 50%;
+        left: 0;
         bottom: 0;
-        height: 0;
-        width: 64%;
+        height: 100%;
+        width: 2px;
         background: rgba(255, 255, 255, 0);
-        transition: linear .25s;
         opacity: 0;
-
-        transform: translate(-50%) scaleX(0);
-        -webkit-transform: translate(-50%) scaleX(0);
-        -moz-transform: translate(-50%) scaleX(0);
-        -o-transform: translate(-50%) scaleX(0);
-        -ms-transform: translate(-50%) scaleX(0);
     }
-    &.active, &:hover {
+    &.active {
         &:before {
-            height: 2px;
             opacity: 1;
-
-            transform: translate(-50%) scaleX(1);
-            -webkit-transform: translate(-50%) scaleX(1);
-            -moz-transform: translate(-50%) scaleX(1);
-            -o-transform: translate(-50%) scaleX(1);
-            -ms-transform: translate(-50%) scaleX(1);
         }
         &.nav-home:before  {
             background: #443fb5;
@@ -137,18 +100,18 @@ body {
 
 
     .iconfont {
-        position: absolute;
-        left: 0;
-        margin-top: 11px;
-        font-size: 23px;
+        position: relative;
+        float: left;
+        font-size: 20px;
         line-height: 1;
+        margin-right: 10px;
+        margin-top: 1px;
     }
 
     &>div {
         position: relative;
         margin: 0 auto;
-        padding-left: 25px;
-        width: 28px;
+        padding: 10px 0 10px 25px;
     }
 }
 
@@ -293,6 +256,7 @@ body {
         font-size: 24px;
     }
     #markdown-toc {
+        display: none;
         position: fixed;
         width: 210px;
         right: 15px;
@@ -321,7 +285,7 @@ body {
 
 .post-icon {
     margin-left: 12px;
-    font-size: 12px;
+    font-size: 10px;
     padding: 2px 6px;
     border-radius: 10px;
 
@@ -337,8 +301,9 @@ body {
 
 .post-content {
     margin-top: 6px;
-    line-height: 1.65;
+    line-height: 1.7;
     font-size: 13px;
+    color: #777;
     h2 {
         font-size: 1.2rem;
     }
@@ -414,8 +379,46 @@ footer{
 
 @media screen and (min-width: 751px) {
     .menu-item {
+        float: left;
         width: 64px;
+        line-height: 45px;
         margin-right: 12px;
+        & > div {
+            width: 28px;
+            padding:0 0 0 25px;
+        }
+        &:before{
+            position: absolute;
+            left: 50%;
+            height: 0;
+            width: 64%;
+            transition: linear .25s;
+            opacity: 0;
+    
+            transform: translate(-50%) scaleX(0);
+            -webkit-transform: translate(-50%) scaleX(0);
+            -moz-transform: translate(-50%) scaleX(0);
+            -o-transform: translate(-50%) scaleX(0);
+            -ms-transform: translate(-50%) scaleX(0);
+        }
+        &.active, &:hover {
+            &:before {
+                height: 2px;
+                opacity: 1;
+    
+                transform: translate(-50%) scaleX(1);
+                -webkit-transform: translate(-50%) scaleX(1);
+                -moz-transform: translate(-50%) scaleX(1);
+                -o-transform: translate(-50%) scaleX(1);
+                -ms-transform: translate(-50%) scaleX(1);
+            }
+        }
+        .iconfont {
+            position: absolute;
+            left: 0;
+            margin-top: 11px;
+            font-size: 23px;
+        }
     }
     .banner {
         height: 450px;
@@ -423,6 +426,37 @@ footer{
     }
     .banner-background {
         background-size:auto 450px;
+    }
+    .container {
+        transform: none;
+    }
+    .main {
+        width: 90%;
+    }
+    .header {
+        width: 100%;
+        height: 45px;
+        background: rgba(255, 255, 255, .84);
+        background-position: bottom left;
+        box-shadow: 0 1px 3px rgba(0,0,0,.18);
+        -webkit-transition:height 0s, background .15s linear .1s;
+        transition:height 0s, background .15s linear .1s;
+        &.top {
+            height: 100px;
+            background: url(../images/head_top_mask.png) top left repeat-x transparent;
+            -webkit-transition:height 0s, background 0s;
+            transition:height 0s, background 0s;
+            box-shadow: none;
+            .menu-item {
+                color: #fff;
+                text-shadow: 0 0 2px rgba(0, 0, 0, .64);
+                &.active:before, &:hover:before {
+                    background: #fff;
+                    height: 1px;
+                    bottom: 6px;
+                }
+            }
+        }
     }
 }
 @media screen and (max-width: 750px) {
@@ -432,8 +466,9 @@ footer{
     .header .avatar, .search-form{
         display: none;
     }
-    .menu{
+    .menu {
         float: none;
+        margin-top: 50px;
         li{
             box-sizing: border-box;
             width: 25%;
@@ -443,10 +478,8 @@ footer{
     }
 }
 
-@media screen and (max-width: 1024px) {
-    #markdown-toc{
-        display: none;
-    }
+@media screen and (min-width: 1024px) {
+    
 }
 @media screen and (min-width: 1280px) { 
     .main {
