@@ -180,6 +180,7 @@ body {
 
 
 .menu-categories {
+    display: none;
     .main{
         overflow: hidden;
     }
@@ -265,11 +266,15 @@ body {
 .main {
     margin: 0 auto;
 }
-
+.post-list {
+    .post:first-child {
+        border-top: none;
+    }
+}
 .post {
     list-style: none;
     position: relative;
-    padding: 20px;
+    padding: 10px;
     background: #fff;
     margin: 10px 0;
     border-top: 1px solid #f5f8fa;
@@ -305,9 +310,9 @@ body {
 }
 
 .post-title {
-    margin: 0;
-    font-size: 18px;
-    line-height: 32px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    line-height: 20px;
     font-weight: normal;
     a {
         color: $brand-color;
@@ -331,8 +336,8 @@ body {
 }
 
 .post-content {
-    margin-top: 10px;
-    line-height: 1.65;
+    margin-top: 6px;
+    line-height: 1.5;
     font-size: 13px;
     h2 {
         font-size: 1.2rem;
@@ -378,7 +383,7 @@ body {
 }
 
 .post-meta {
-    font-size: 12px;
+    font-size: 10px;
     color: #999;
 }
 
@@ -388,7 +393,7 @@ body {
 }
 
 .content {
-    padding: 15px 45px;
+    padding:0 15px 15px;
 }
 .article-header {
     padding: 20px;
