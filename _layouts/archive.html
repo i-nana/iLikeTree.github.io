@@ -106,6 +106,8 @@ layout: default
         function addScrollListener() {
             var $banner = $('#banner').find('.banner-background');
             var top = $(window).scrollTop();
+            var width = $(window).innerWidth();
+            if(width < 751) return;
             var x = top * 0.5;
             if(top >= 225) {
                 $('#header').removeClass('top');
