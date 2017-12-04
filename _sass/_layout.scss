@@ -2,23 +2,19 @@ html {
     font-size: 20px;
 }
 body {
-    position: absolute;
+    position: relative;
     width: 100%;
     min-height: 100%;
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 .container {
+    position: relative;
     padding-top: 45px;
     padding-bottom: 60px;
+    background: #fff;
     .main {
         background: #fff;
     }
-}
-.menu-show .container{
-    transform: translateX(240px) translateY(0) translateZ(0);
-}
-.menu-show .header{
-    left: 0;
 }
 .header {
     position: fixed;
@@ -29,11 +25,12 @@ body {
     background: #e63636;
     font-size: 14px;
     z-index: 100;
-    .avatar{
-        position: absolute;
-        border-radius: 50%;
-        overflow: hidden;
-    }
+}
+.avatar{
+    position: fixed;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 200;
     .avatar-img {
         width: 100%;
         height: 100%;
@@ -107,7 +104,6 @@ body {
         }
     }
 }
-
 
 .menu-categories {
     display: none;
@@ -344,6 +340,51 @@ footer{
     }
 }
 
+@media screen and (max-width: 750px) {
+    body {
+        left: 0;
+        &.menu-show {
+            left: 240px;
+            overflow-y: hidden;
+            .avatar {
+                width: 64px;
+                height: 64px;
+            }
+            .header {
+                left: 0;
+            }
+        }
+    }
+    body, .header {
+        -webkit-transition: left 0.3s ease-in-out;
+        transition: left 0.3s ease-in-out;
+    }
+    .header-content {
+        margin: 0;
+    }
+    .avatar {
+        top: 6px;
+        left: 6px;
+        width: 36px;
+        height: 36px;
+        box-shadow: 0 0 3px 0 rgba(0, 0, 0, .36);
+        transition: all .25s linear;
+    }
+
+    .search-form{
+        display: none;
+    }
+    .menu {
+        float: none;
+        margin-top: 50px;
+        li{
+            box-sizing: border-box;
+            width: 25%;
+            margin-right: 0;
+            padding: 0;
+        }
+    }
+}
 @media screen and (min-width: 751px) {
     .menu {
         float: left;
@@ -403,7 +444,7 @@ footer{
             margin-top: 11px;
             font-size: 23px;
         }
-        &.active {
+        &.active, &:hover {
             &:before {
                 opacity: 1;
             }
@@ -431,11 +472,15 @@ footer{
     .banner-background {
         background-size:auto 450px;
     }
-    .container {
-        transform: none;
-    }
     .main {
         width: 90%;
+    }
+    .avatar {
+        margin-left: -17.5px;
+        left: 50%;
+        top: 5px;
+        width: 35px;
+        height: 35px;
     }
     .header {
         left: 0;
@@ -446,6 +491,7 @@ footer{
         box-shadow: 0 1px 3px rgba(0,0,0,.18);
         -webkit-transition:height 0s, background .15s linear .1s;
         transition:height 0s, background .15s linear .1s;
+
         &.top {
             height: 100px;
             background: url(../images/head_top_mask.png) top left repeat-x transparent;
@@ -461,36 +507,10 @@ footer{
                     bottom: 6px;
                 }
             }
+            .search-form {
+                display: none;
+            }
         }
-    }
-}
-@media screen and (max-width: 750px) {
-    .header-content {
-        margin: 0;
-        .avatar {
-            top: 6px;
-            right: -42px;
-            width: 36px;
-            height: 36px;
-            box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.35);
-        }
-    }
-    .search-form{
-        display: none;
-    }
-    .menu {
-        float: none;
-        margin-top: 50px;
-        li{
-            box-sizing: border-box;
-            width: 25%;
-            margin-right: 0;
-            padding: 0;
-        }
-    }
-    .container, .header {
-        -webkit-transition: left .3s linear, -webkit-transform .3s linear;
-        transition: left .3s linear, -webkit-transform .3s linear;
     }
 }
 

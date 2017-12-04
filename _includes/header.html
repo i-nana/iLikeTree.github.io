@@ -1,8 +1,5 @@
 <header class="header top" id="header">
 	<div class="main header-content">
-		<a href="javascript: void(0);" id="avatar" class="avatar">
-			<img class="avatar-img" src="http://wx2.sinaimg.cn/large/82d84e71ly8flhykgqg4zj20bj0bj413.jpg">
-		</a>
 		<div class="menu clear" id="menu">
 			<a href="/" class="menu-item nav-home"><div><i class="iconfont">&#xe632;</i><span>首页</span></div></a>
 			<a href="/study/" class="menu-item nav-code active"><div><i class="iconfont">&#xe6f3;</i><span>学习</span></div></a>
@@ -16,8 +13,12 @@
 		
 	</div>
 </header>
+<a href="javascript: void(0);" class="avatar" id="avatar">
+	<img class="avatar-img" src="http://wx2.sinaimg.cn/large/82d84e71ly8flhykgqg4zj20bj0bj413.jpg">
+</a>
 <script>
 	$('#avatar').click(function(e){
 		$('body').toggleClass('menu-show');
+		
 	});
 </script>
