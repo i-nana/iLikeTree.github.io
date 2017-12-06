@@ -9,6 +9,7 @@ body {
 }
 .container {
     position: relative;
+    left: 0;
     padding-top: 45px;
     padding-bottom: 60px;
     background: #fff;
@@ -342,9 +343,7 @@ footer{
 
 @media screen and (max-width: 750px) {
     body {
-        left: 0;
         &.menu-show {
-            left: 240px;
             overflow-y: hidden;
             .avatar {
                 width: 64px;
@@ -353,11 +352,18 @@ footer{
             .header {
                 left: 0;
             }
+            .container {
+                left: 240px;
+            }
         }
     }
-    body, .header {
-        -webkit-transition: left 0.3s ease-in-out;
-        transition: left 0.3s ease-in-out;
+    .header {
+        -webkit-transition: left 0.3s linear;
+        transition: left 0.3s linear;
+    }
+    .container {
+        -webkit-transition: left 0.3s linear;
+        transition: left 0.3s linear;
     }
     .header-content {
         margin: 0;
