@@ -1,5 +1,5 @@
 html {
-    font-size: 20px;
+    font-size: 10px;
 }
 body {
     position: relative;
@@ -239,9 +239,6 @@ body {
 
 .post-title {
     margin-bottom: 6px;
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: normal;
     a {
         color: $brand-color;
     }
@@ -392,6 +389,9 @@ footer{
     }
 }
 @media screen and (min-width: 751px) {
+    html {
+        font-size: 12px;
+    }
     .menu {
         float: left;
         .nav-home {
@@ -517,6 +517,9 @@ footer{
                 display: none;
             }
         }
+    }
+    .post-meta {
+        font-size: 12px;
     }
 }
 
