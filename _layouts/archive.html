@@ -73,7 +73,7 @@ layout: default
             }
         }
 
-        getBingWallpaper();
+        // getBingWallpaper();
         function getBingWallpaper(){
             var wallpaper = localStorage.getItem('bing_wallpaper');
             if(wallpaper && JSON.parse(wallpaper).enddate === new Date().format('yyyyMMdd')) {
@@ -92,7 +92,7 @@ layout: default
                 }
             })
         }
-
+        // setBingWallpaper();
         function setBingWallpaper(data) {
             var $banner = $('#banner').find('.banner-background');
             data.url = '/images/mainvisual.jpg';
