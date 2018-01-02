@@ -85,7 +85,6 @@ layout: default
                 type: "GET",
                 dataType: "jsonp",
                 success: function(res) {
-                    console.log(res);
                     if(!res.status.code === 200 || !res.data) return;
                     localStorage.setItem('bing_wallpaper', JSON.stringify(res.data));
                     setBingWallpaper(res.data);

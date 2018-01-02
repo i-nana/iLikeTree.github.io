@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-    {% include head.html %}
-    <body ontouchstart="">
+{% include head.html %}
+
+<body ontouchstart="">
+    <header class="header top" id="header">
         {% include header.html %}
+    </header>
+    <div class="container">
+        {{ content }}
+    </div>
 
-        <div class="container">
-            {{ content }}
-        </div>
+    {% include footer.html %}
+</body>
 
-        {% include footer.html %}
-    </body>
 </html>

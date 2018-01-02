@@ -1,24 +1,41 @@
-<header class="header top" id="header">
-	<div class="main header-content">
-		<div class="menu clear" id="menu">
-			<a href="/" class="menu-item nav-home"><div><i class="iconfont">&#xe632;</i><span>首页</span></div></a>
-			<a href="/study/" class="menu-item nav-code active"><div><i class="iconfont">&#xe6f3;</i><span>学习</span></div></a>
-			<a href="/daily/" class="menu-item nav-daily"><div><i class="iconfont">&#xe636;</i><span>日常</span></div></a>
-			<!-- <li><a href="/" class="menu-item nav-demo"><i class="iconfont">&#xe6e9;</i><span>实验室</span></a></li> -->
-			<a href="/" class="menu-item nav-me"><div><i class="iconfont">&#xe635;</i><span>关于</span></div></a>
-		</div>
-		<form class="search-form" method="post" action="javascript: return true;" onsubmit="return false;">
-			<input class="search-input" type="search" autocomplete="off" placeholder="搜索一下吧~">
-		</form>
-		
+<div class="main header-content">
+	<div class="menu clear" id="menu">
+		<a href="/" class="menu-item nav-home">
+			<div>
+				<i class="iconfont">&#xe632;</i>
+				<span>首页</span>
+			</div>
+		</a>
+		<a href="/study/" class="menu-item nav-code active">
+			<div>
+				<i class="iconfont">&#xe6f3;</i>
+				<span>学习</span>
+			</div>
+		</a>
+		<a href="/daily/" class="menu-item nav-daily">
+			<div>
+				<i class="iconfont">&#xe636;</i>
+				<span>日常</span>
+			</div>
+		</a>
+		<a href="/" class="menu-item nav-me">
+			<div>
+				<i class="iconfont">&#xe635;</i>
+				<span>关于</span>
+			</div>
+		</a>
 	</div>
-</header>
+	<form class="search-form" method="post" action="javascript: return true;" onsubmit="return false;">
+		<input class="search-input" type="search" autocomplete="off" placeholder="搜索一下吧~">
+	</form>
+
+</div>
 <a href="javascript: void(0);" class="avatar" id="avatar">
 	<img class="avatar-img" src="http://wx2.sinaimg.cn/large/82d84e71ly8flhykgqg4zj20bj0bj413.jpg">
 </a>
 <script>
-	$('#avatar').click(function(e){
+	$('#avatar').click(function (e) {
 		$('body').toggleClass('menu-show');
-		
+
 	});
 </script>
