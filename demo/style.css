@@ -94,35 +94,36 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: #009688;
+    background: #fff;
     -webkit-transition: background .5s ease;
     -moz-transition: background .5s ease;
     -ms-transition: background .5s ease;
     -o-transition: background .5s ease;
     transition: background .5s ease;
+    overflow-x: hidden; 
 }
 
-.active-0 {
-    background: #ffeeef;
+.active-home {
+    background: #fff;
 }
 
-.active-1 {
+.active-my {
     background: #6cc;
 }
 
-.active-2 {
+.active-demo {
     background: #f30;
 }
 
-.active-3 {
+.active-daily {
     background: #66c;
 }
 
-.active-4 {
+.active-end {
     background: pink;
 }
 
-.active-0 .sec-0, .active-1 .sec-1, .active-2 .sec-2, .active-3 .sec-3, .active-4 .sec-4 {
+section.sec-in {
     z-index: 100;
 }
 
@@ -156,9 +157,6 @@ section .main > .content {
     height: 612px;
 }
 
-.card-list {
-}
-
 .card-item {
     position: relative;
     list-style: none;
@@ -185,7 +183,7 @@ section .main > .content {
     transform: translateX(300px);
 }
 
-.active-0 .card-item {
+.sec-in .card-item {
     filter: alpha(opacity=1);
     -moz-opacity: 1;
     opacity: 1;
@@ -195,7 +193,7 @@ section .main > .content {
     transform: translateX(0);
 }
 
-.active-0 .card-item:nth-child(1), .active-1 .card-item:nth-child(4) {
+.sec-in .card-item:nth-child(1), .sec-out .card-item:nth-child(4) {
     -webkit-transition-delay: 0.1s;
     -moz-transition-delay: 0.1s;
     -ms-transition-delay: 0.1s;
@@ -203,7 +201,7 @@ section .main > .content {
     transition-delay: 0.1s;
 }
 
-.active-0 .card-item:nth-child(2), .active-1 .card-item:nth-child(3) {
+.sec-in .card-item:nth-child(2), .sec-out .card-item:nth-child(3) {
     -webkit-transition-delay: .35s;
     -moz-transition-delay: .35s;
     -ms-transition-delay: .35s;
@@ -211,7 +209,7 @@ section .main > .content {
     transition-delay: .35s;
 }
 
-.active-0 .card-item:nth-child(3), .active-1 .card-item:nth-child(2) {
+.sec-in .card-item:nth-child(3), .sec-out .card-item:nth-child(2) {
     -webkit-transition-delay: .6s;
     -moz-transition-delay: .6s;
     -ms-transition-delay: .6s;
@@ -219,7 +217,7 @@ section .main > .content {
     transition-delay: .6s;
 }
 
-.active-0 .card-item:nth-child(4), .active-1 .card-item:nth-child(1) {
+.sec-in .card-item:nth-child(4), .sec-out .card-item:nth-child(1) {
     -webkit-transition-delay: .85s;
     -moz-transition-delay: .85s;
     -ms-transition-delay: .85s;
@@ -277,4 +275,107 @@ section .main > .content {
     font-size: 10px;
     color: #aaa;
     font-weight: 300;
+}
+
+.slidebar {
+    position: absolute;
+    z-index: 120;
+    width: 40px;
+    right: 15px;
+    top: 50%;
+}
+.slidebar li {
+    list-style: none;
+    padding: 4px 0;
+    font-size: 11px;
+}
+.slidebar li, .slidebar .slidebar-active a {
+    height: 18px;
+    width: 40px;
+}
+.slidebar a {
+    display: block;
+    margin: 7px 17px;
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    background: #f66;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all .2s linear .2s;
+}
+.active-my .slidebar a {
+    background: #08a9a9;
+}
+.slidebar .slidebar-text {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 18px;
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transition: opacity .2s linear;
+}
+
+.slidebar .slidebar-active a {
+    margin: 0;
+    border-radius: 10px;
+    transition: all .2s linear 0s;
+    
+}
+.slidebar .slidebar-active .slidebar-text {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -webkit-transition: opacity .2s linear .2s;
+    -moz-transition: opacity .2s linear .2s;
+    -ms-transition: opacity .2s linear .2s;
+    -o-transition: opacity .2s linear .2s;
+    transition: opacity .2s linear .2s;
+}
+
+@media screen and (min-width: 1440px) {
+    section .main > .content {
+        width: 1318px;
+    }
+    .card-item {
+        width: 280px;
+        margin-right: 66px;
+    }
+    .card-img {
+        width: 280px;
+        height: 280px;
+    }
+}
+.circles {
+    position: relative;
+    width: 200px;
+    height: 200px;
+}
+.circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    opacity: .5;
+}
+
+.circle-1 {
+    margin-left: -55px;
+    margin-top: -55px;
+    width: 110px;
+    height: 110px;
+    background: lightpink;
+}
+.circle-2, .circle-3{
+    margin-left: -50px;
+    margin-top: -50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 25%;
+    background: lightpink;
+}
+.circle-3 {
+    transform: rotate(45deg);
 }
