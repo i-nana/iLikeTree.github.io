@@ -116,7 +116,7 @@ body {
 }
 
 .active-daily {
-    background: #66c;
+    background: #a7dbeb;
 }
 
 .active-end {
@@ -306,6 +306,9 @@ section .main > .content {
 }
 .active-my .slidebar a {
     background: #08a9a9;
+}
+.active-daily .slidebar a {
+    background: #00bcd4;
 }
 .slidebar .slidebar-text {
     display: block;
