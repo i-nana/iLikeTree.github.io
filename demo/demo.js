@@ -1,5 +1,6 @@
 (function () {
     $(document).on('mousewheel', function (event) {
+        event.preventDefault();
         throttle(listenScroll, event);
     });
     var ids = ['home', 'my', 'demo', 'daily', 'end'];
