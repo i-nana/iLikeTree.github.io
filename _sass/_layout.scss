@@ -269,24 +269,17 @@ body {
     line-height: 1.7;
     font-size: 13px;
     color: #777;
-    h2 {
-        font-size: 1.2rem;
-    }
     h3 {
         padding-top: 12px;
-        font-size: 1rem;
         line-height: 1.4;
-        font-family: Tahoma, 'STKaiti', 'KaiTi', $base-font-family;
         color: $brand-color;
     }
     h4 {
         padding: 6px 0 0;
-        font-size: .7rem;
         font-weight: 300;
     }
     p {
         margin: 2px 0;
-        font-size: .6rem;
     }
     ul,
     ol {
@@ -396,7 +389,7 @@ footer{
 }
 @media screen and (min-width: 751px) {
     html {
-        font-size: 12px;
+        font-size: 16px;
     }
     .menu {
         float: left;
