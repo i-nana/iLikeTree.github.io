@@ -3,7 +3,7 @@
         event.preventDefault();
         throttle(listenScroll, event);
     });
-    var ids = ['daily']//['home', 'my', 'demo', 'daily', 'end'];
+    var ids = ['home', 'my', 'demo', 'daily', 'end'];
     var activeId = 0;
     var len = ids.length;
     var done = true;
