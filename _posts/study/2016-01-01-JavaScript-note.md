@@ -82,6 +82,9 @@ var isMobile = !!(navigator.userAgent.match(/(iPhone)|(iPod)|(iPad)|(android)|(w
 
 // 微信浏览器
 var isWeChatBrowser = !!navigator.userAgent.match(/MicroMessenger/ig);
+
+// iPhone X
+var isIphoneX = window.devicePixelRatio === 3 && /iphone/gi.test(navigator.userAgent) && screen.width === 375 && screen.height === 812;
 ```
 
 ### 6.判断对象是否为空

@@ -128,8 +128,25 @@ ECMAScript中有7种数据类型：
 JS中判断数据类型有三种方法：`typeof`、`instanceof`、`constructor`。
 
 1.用 typeof 语句判断变量类型，typeof语句返回类型对应的字符串。
-2.用 instanceof 语句判断变量类型，instanceof语句返回true/false。
+2.用 instanceof 语句判断变量类型，instanceof语句返回true/false。**The `instanceof` operator tests the presence of `constructor.prototype` in object's prototype chain.**
 3.用 constructor 属性判断变量类型，这个属性返回用来构造该变量的构造函数引用。
+
+```javascript
+// 测试 instanceof
+var a=undefined, b = null, c = true, d = 123, e = 'abc', f = Symbol(), g = {name: 'G'}, h = [1,2,3], i = function(){console.log('I')};
+var arr = [a, b, c, d, e, f, g, h, i];
+
+arr.forEach((x, i)=>{
+    if(x !== null && x !== undefined ) console.log(x, x instanceof Object)
+});
+// g（Object）, h（Array） , i（Function） 均返回 true，其他为false
+
+arr.forEach((x, i)=>{
+    if(x !== null && x !== undefined ) console.log(x, x instanceof Array)
+});
+// 只有h（Array）返回true
+
+```
 
 |             | undefined |  null    | boolean | Number | String | Symbol | Object  | Array | Function |
 | --------    | -----     |  -----   | -----   | -----  | -----  | -----  | -----  | -----  | -----  |
