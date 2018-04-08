@@ -6,11 +6,11 @@ categories: study
 tags: Javascript
 description: ''
 ---
+# 目录
 
-- 目录
 {:toc}
 
-### 1. JavaScript 获取伪类元素（pseudo-element）属性
+## 1. JavaScript 获取伪类元素（pseudo-element）属性
 
 ```javascript
 // 获取伪类元素的所有样式
@@ -19,6 +19,7 @@ var style = window.getComputedStyle('元素', '伪类');
 // 获取特定属性
 var marginR = style.getPropertyValue('margin-right');       // 10px
 ```
+
 如果不是伪类元素，第二个参数可以省略。例如：
 
 ```javascript
@@ -30,13 +31,12 @@ getComputedStyle：只读，返回所有属性值
 
 style：可读可写，只返回css中的属性值
 
-
-### 2. 添加、删除类
+## 2. 添加、删除类
 
 ```javascript
 // classList API 兼容IE10及以上的浏览器
 iDiv.className;  // 返回字符串
-iDiv.classList;  // 返回数组   
+iDiv.classList;  // 返回数组
 iDiv.classList.add('newClassName');  // 添加类
 iDiv.classList.remove('className');  // 删除类
 iDiv.classList.toggle('className');  // 反转类
@@ -44,7 +44,7 @@ iDiv.classList.toggle('className');  // 反转类
 
 ---
 
-### 3. 屏幕旋转的事件和样式
+## 3. 屏幕旋转的事件和样式
 
 ``` javascript
 function orientInit(){
@@ -68,13 +68,13 @@ window.addEventListener('onorientationchange' in window ? 'orientationchange' : 
 @media all and (orientation: portrait) { }
 ```
 
-### 4. 英文首字母大写
+## 4. 英文首字母大写
 
 ``` javascript
 var newVal = value.chartAt(0).toUppercase() + value.slice(1);
 ```
 
-### 5. 设备检测
+## 5. 设备检测
 
 ``` javascript
 // 手否是手机
@@ -87,7 +87,7 @@ var isWeChatBrowser = !!navigator.userAgent.match(/MicroMessenger/ig);
 var isIphoneX = window.devicePixelRatio === 3 && /iphone/gi.test(navigator.userAgent) && screen.width === 375 && screen.height === 812;
 ```
 
-### 6.判断对象是否为空
+## 6.判断对象是否为空
 
 ``` javascript
 function isEmptyObject(obj) {
@@ -101,7 +101,7 @@ function isEmptyObject(obj) {
 }
 ```
 
-### 7. 日期格式化
+## 7. 日期格式化
 
 ``` javascript
 Date.prototype.format = function(format) {
