@@ -2,7 +2,7 @@
 layout: post
 title:  VUE ✿ 实践以及性能优化
 date:   2017-07-30
-categories: coding
+categories: study
 tags: javascript vue
 description: 
 ---

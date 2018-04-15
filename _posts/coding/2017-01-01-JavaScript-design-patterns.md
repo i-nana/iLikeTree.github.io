@@ -2,7 +2,7 @@
 layout: post
 title:  JavaScript中常用的设计模式及其实现方式
 date:   2017-01-01
-categories: coding
+categories: study
 tags: [javascript]
 ---
 

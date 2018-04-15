@@ -2,7 +2,7 @@
 layout: post
 title:  VUE vs. REACT
 date:   2017-07-01
-categories: coding
+categories: study
 tags: Javascript
 ---
 

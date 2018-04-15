@@ -2,7 +2,7 @@
 layout: post
 title:  Angular vs. React vs. Vue：A 2017 comparison
 date:   2017-09-11
-categories: coding
+categories: study
 tags: Javascript
 translate: true
 ---

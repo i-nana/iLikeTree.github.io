@@ -7,19 +7,21 @@ tags: [javaScript]
 ---
 
 > http://math.hws.edu/eck/jsdemo/sortlab.html
- 
-1. __插入排序__：
-	+ 直接插入排序
-	+ 希尔排序
+
+> https://mp.weixin.qq.com/s?__biz=MzA4NDIzNzMwMw==&mid=205918233&idx=1&sn=a6152f2307bd9520e9319f3aae076a0e&3rd=MzA3MDU4NTYzMw==&scene=6#rd
+
+1. __插入排序__：（Insertion Sort）
+    + 直接插入排序
+    + 希尔排序（Shell Sort）
 2. __交换排序__：
-	+ 冒泡排序
-	+ [快速排序 Quick Sort](#quickSort)
+    + 冒泡排序（Bubble Sort）
+    + [快速排序 Quick Sort](#quickSort)
 3. __选择排序__
-	+ 直接选择排序
-	+ 堆排序
+    + 直接选择排序（Selection Sort）
+    + 堆排序（Merge Sort）
 4. __归并排序__
 5. __分配排序__：
-	+ 基数排序
+    + 基数排序
 
 所需辅助空间最多：归并排序;
 所需辅助空间最少：堆排序;
@@ -32,23 +34,23 @@ tags: [javaScript]
 
 ``` javascript
 if(!Array.prototype.swap) {
-	Array.prototype.swap = function(a,b) {
-		var temp = this[a];
-		this[a] = this[b];
-		this[b] = temp;
-		return this;
-	};
+    Array.prototype.swap = function(a,b) {
+        var temp = this[a];
+        this[a] = this[b];
+        this[b] = temp;
+        return this;
+    };
 }
 
 if(!Array.prototype.swap) {
-	Object.defineProperty(Array.prototype,'swap',{
-		value: function(a,b) {
-			var temp = this[a];
-			this[a] = this[b];
-			this[b] = temp;
-			return this;
-		}
-	});
+    Object.defineProperty(Array.prototype,'swap',{
+        value: function(a,b) {
+            var temp = this[a];
+            this[a] = this[b];
+            this[b] = temp;
+            return this;
+        }
+    });
 }
 ```
 
@@ -64,22 +66,22 @@ if(!Array.prototype.swap) {
 
 ``` javascript
 var quickSort=function(arr){
-	var len=arr.length;
-	if(len>1){
-		var pivot=arr[0];
-		var left=[];
-		var right=[];
-		for(var i=1;i<len;i++){
-			if(arr[i]<pivot){
-				left.push(arr[i]);
-			}else{
-				right.push(arr[i]);
-			}
-		}
-		return quickSort(left).concat(pivot,quickSort(right));
-	}else{
-		return arr;
-	}
+    var len=arr.length;
+    if(len>1){
+        var pivot=arr[0];
+        var left=[];
+        var right=[];
+        for(var i=1;i<len;i++){
+            if(arr[i]<pivot){
+                left.push(arr[i]);
+            }else{
+                right.push(arr[i]);
+            }
+        }
+        return quickSort(left).concat(pivot,quickSort(right));
+    }else{
+        return arr;
+    }
 };
 ```
 
@@ -94,19 +96,19 @@ var quickSort=function(arr){
 
 ``` javascript
 var bubbleSort=function(arr) {
-	var len = arr.length;
-	if(len>1){
-		for(var i=1;i<length;i++){
-			for(var j=i; j>0; j--){
-				if(arr[j]<arr[j-1]){
-					arr.swap(j,j-1);
-				}else{
-					break;
-				}
-			}
-		}
-	}
-	return arr;
+    var len = arr.length;
+    if(len>1){
+        for(var i=1;i<length;i++){
+            for(var j=i; j>0; j--){
+                if(arr[j]<arr[j-1]){
+                    arr.swap(j,j-1);
+                }else{
+                    break;
+                }
+            }
+        }
+    }
+    return arr;
 };
 
 //冒泡排序的defineProperty形式
@@ -136,47 +138,47 @@ Array.prototype.bubbleSort = function () {
 
 ``` javascript
 var merge=function(left,right){
-	var arr=[];
-	while(left.length&&right.length){
-		if(left[0]<right[0]){
-			arr.push(left.shift());
-		}else{
-			arr.push(right.shift());
-		}
-		return arr.concat(left,right);
-	}
+    var arr=[];
+    while(left.length&&right.length){
+        if(left[0]<right[0]){
+            arr.push(left.shift());
+        }else{
+            arr.push(right.shift());
+        }
+        return arr.concat(left,right);
+    }
 };
 var mergeSort=function(arr){
-	var len=arr.length;
-	if(len>1){
-		var index=Math.floor(len/2);
-		var left=arr.slice(0,index);
-		var right=arr.slice(index);
-		return merge(mergeSort(left),mergeSort(right));
-	}else{
-		return arr;
-	};
+    var len=arr.length;
+    if(len>1){
+        var index=Math.floor(len/2);
+        var left=arr.slice(0,index);
+        var right=arr.slice(index);
+        return merge(mergeSort(left),mergeSort(right));
+    }else{
+        return arr;
+    };
 }
 
 //归并排序的非递归实现
 var mergeSortIteration=function(arr){
-	var len=arr.length;
-	if(len>1){
-		var work=[];
-		for(var i=0;i<len;i++){
-			work.push([arr[i]]);
-		}
-		worl.push([]);
-		for(var j=len;j>1;j=Math.ceil(j/2)){
-			for(var k=0,l=0;l<j;k++,l+=2){
-				work[k]=merge(work[l],work[l+1]);
-			}
-			work[k]=[];
-		}
-		return work[0]
-	}else{
-		return arr;
-	}
+    var len=arr.length;
+    if(len>1){
+        var work=[];
+        for(var i=0;i<len;i++){
+            work.push([arr[i]]);
+        }
+        worl.push([]);
+        for(var j=len;j>1;j=Math.ceil(j/2)){
+            for(var k=0,l=0;l<j;k++,l+=2){
+                work[k]=merge(work[l],work[l+1]);
+            }
+            work[k]=[];
+        }
+        return work[0]
+    }else{
+        return arr;
+    }
 };
 ```
 
@@ -186,32 +188,65 @@ var mergeSortIteration=function(arr){
 
 ``` javascript
 var partition=function(arr,start,end){
-	var index=start;
-	var pivot=arr[start];
-	arr.swap(start,end);
-	for(var i=start;i<end;i++){
-		if(arr[i]<pivot){
-			arr.swap(i,index);
-			index++
-		}
-	}
-	arr.swap(index,end);
-	return index;
+    var index=start;
+    var pivot=arr[start];
+    arr.swap(start,end);
+    for(var i=start;i<end;i++){
+        if(arr[i]<pivot){
+            arr.swap(i,index);
+            index++
+        }
+    }
+    arr.swap(index,end);
+    return index;
 };
 var sorting=function(arr,start,end){
-	if(end-star>1){
-		var index=partition(arr,start,end-1);
-		sorting(arr,start,index);
-		sorting(arr,index+1,end);
-	}
-	return arr;
+    if(end-star>1){
+        var index=partition(arr,start,end-1);
+        sorting(arr,start,index);
+        sorting(arr,index+1,end);
+    }
+    return arr;
 };
 var quickSortInPlace=function(arr){
-	var len=arr.length;
-	if(len>1){
-		return sorting(arr,0,len);
-	}else{
-		return arr;
-	;}
+    var len=arr.length;
+    if(len>1){
+        return sorting(arr,0,len);
+    }else{
+        return arr;
+    ;}
+}
+```
+
+### 插入排序
+
+待排序元素: 6, 5, 3, 1, 8, 7, 2, 4
+
+1. 第一
+    + 6 > 5，位置互换：[5, 6], 3, 1, 8, 7, 2, 4
+2. 第二
+    + 3 < 6，位置互换：[5, 3, 6], 1, 8, 7, 2, 4
+    + 3 < 5，位置互换：[3, 5, 6], 1, 8, 7, 2, 4
+3. 第三
+    + 1 < 6，位置互换：[3, 5, 1, 6], 8, 7, 2, 4
+    + 1 < 5，位置互换：[3, 1, 5, 6], 8, 7, 2, 4
+    + 1 < 3，位置互换：[1, 3, 5, 6], 8, 7, 2, 4
+4. 第四
+    + 8 > 6，位置不变：[1, 3, 5, 6, 8], 7, 2, 4
+5. 第五
+    + 7 < 8，位置互换：[1, 3, 5, 6, 7, 8], 2, 4
+    + 7 > 6，位置不变：[1, 3, 5, 6, 7, 8], 2, 4
+6. 第六
+    + 2 < 8，位置互换：[1, 3, 5, 6, 7, 2, 8], 4
+    + 2 < 7，位置互换：[1, 3, 5, 6, 2, 7, 8], 4
+    + ……
+    + 2 > 1，位置不变：[1, 2, 3, 5, 6, 7, 8], 4
+7. 第七
+    + ……
+    + 1, 2, 3, 4, 5, 6, 7, 8
+
+```javascript
+function insertioonSort() {
+    
 }
 ```

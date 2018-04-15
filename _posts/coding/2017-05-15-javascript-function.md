@@ -2,7 +2,7 @@
 layout: post
 title:  JavaScript Function
 date:   2017-05-15
-categories: coding
+categories: study
 tags: Javascript
 description: ''
 ---

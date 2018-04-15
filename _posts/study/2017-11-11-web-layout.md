@@ -2,7 +2,7 @@
 layout: post
 title:  Web网页布局和适配的几种常见方式
 date:   2017-11-11
-categories: coding
+categories: study
 tags: [FrontEnd, CSS, JavaScript]
 ---
 

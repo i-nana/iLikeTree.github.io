@@ -2,7 +2,7 @@
 layout: post
 title: Web Frameworks:Foundational Technologies
 date: 2017-07-31
-categories: coding
+categories: study
 tags: javascript vue
 ---
 

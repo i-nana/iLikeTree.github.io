@@ -2,7 +2,7 @@
 layout: post
 title:  VUE ✿ 使用webpack构建多页面应用
 date:   2017-07-31
-categories: coding
+categories: study
 tags: javascript vue
 description: 
 ---

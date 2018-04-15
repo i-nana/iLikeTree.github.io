@@ -2,7 +2,7 @@
 layout: post
 title:  译文 ♡ Callback Hell - Promise
 date:   2017-05-20
-categories: coding
+categories: study
 tags: [JavaScript]
 description: ''
 ---

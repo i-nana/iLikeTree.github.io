@@ -1,12 +1,14 @@
 html {
     font-size: 10px;
 }
+
 body {
     position: relative;
     width: 100%;
     min-height: 100%;
     overflow-x: hidden;
 }
+
 .container {
     position: relative;
     left: 0;
@@ -17,6 +19,7 @@ body {
         background: #fff;
     }
 }
+
 .header {
     position: fixed;
     top: 0;
@@ -27,7 +30,8 @@ body {
     font-size: 14px;
     z-index: 100;
 }
-.avatar{
+
+.avatar {
     position: fixed;
     border-radius: 50%;
     overflow: hidden;
@@ -37,7 +41,6 @@ body {
         height: 100%;
     }
 }
-
 
 .header-content {
     margin: 0 30px;
@@ -51,7 +54,7 @@ body {
     line-height: 20px;
     font-size: 13px;
     color: #fff;
-    &:before{
+    &:before {
         content: "";
         display: block;
         position: absolute;
@@ -62,8 +65,6 @@ body {
         background: rgba(255, 255, 255, 0);
         opacity: 0;
     }
-
-
     .iconfont {
         position: relative;
         float: left;
@@ -72,7 +73,6 @@ body {
         margin-right: 10px;
         margin-top: 1px;
     }
-
     &>div {
         position: relative;
         margin: 0 auto;
@@ -98,7 +98,6 @@ body {
         padding: 8px 32px 8px 12px;
         transition: all .25s ease-in-out;
         width: 100%;
-
         &:focus {
             background: #fff;
             border-color: $brand-color;
@@ -108,7 +107,7 @@ body {
 
 .menu-categories {
     display: none;
-    .main{
+    .main {
         overflow: hidden;
     }
     .tab-empty {
@@ -127,16 +126,15 @@ body {
         span {
             display: block;
             background: #fff;
-
             &.n {
                 padding-top: 10px;
                 padding-bottom: 4px;
             }
-            &.l, &.r {
+            &.l,
+            &.r {
                 position: relative;
                 width: 30px;
                 height: 6px;
-                
                 &:after {
                     position: absolute;
                     content: '';
@@ -149,7 +147,6 @@ body {
             }
             &.l {
                 float: left;
-
                 &:after {
                     right: -6px;
                 }
@@ -161,11 +158,11 @@ body {
                 }
             }
         }
-
         &.on {
             color: $brand-color;
             span {
-                &.l, &.r {
+                &.l,
+                &.r {
                     width: 24px;
                 }
             }
@@ -173,31 +170,32 @@ body {
     }
 }
 
-
 .banner {
     position: relative;
     height: 180px;
     margin-top: -45px;
     background-color: #ca341f;
 }
+
 .banner-background {
     position: absolute;
     height: 100%;
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
-    background-size:auto 180px;
+    background-size: auto 180px;
 }
-
 
 .main {
     margin: 0 auto;
 }
+
 .post-list {
     .post:first-child {
         border-top: none;
     }
 }
+
 .post {
     list-style: none;
     position: relative;
@@ -242,6 +240,7 @@ body {
     font-weight: 400;
     line-height: 1.4;
     margin-bottom: 10px;
+    font-family: Michroma, 'Segoe UI Light', 'Segoe UI', 'Microsoft Jhenghei', sans-serif;
     a {
         // color: $brand-color;
         color: #333;
@@ -253,7 +252,6 @@ body {
     font-size: 10px;
     padding: 2px 6px;
     border-radius: 10px;
-
     &.post-icon-translate {
         background-color: #e5f6f6;
         color: $code-color;
@@ -316,13 +314,14 @@ body {
 }
 
 .content {
-    padding:0 15px 15px;
+    padding: 0 15px 15px;
 }
+
 .article-header {
     padding: 20px;
 }
 
-footer{
+footer {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -330,7 +329,7 @@ footer{
     line-height: 1.8;
     padding: 10px 0;
     font-weight: 300;
-    p{
+    p {
         font-size: 10px;
     }
 }
@@ -372,14 +371,13 @@ footer{
         box-shadow: 0 0 3px 0 rgba(0, 0, 0, .36);
         transition: all .25s linear;
     }
-
-    .search-form{
+    .search-form {
         display: none;
     }
     .menu {
         float: none;
         margin-top: 50px;
-        li{
+        li {
             box-sizing: border-box;
             width: 25%;
             margin-right: 0;
@@ -387,6 +385,7 @@ footer{
         }
     }
 }
+
 @media screen and (min-width: 751px) {
     html {
         font-size: 16px;
@@ -414,11 +413,11 @@ footer{
         width: 64px;
         line-height: 45px;
         margin-right: 12px;
-        & > div {
+        &>div {
             width: 28px;
-            padding:0 0 0 25px;
+            padding: 0 0 0 25px;
         }
-        &:before{
+        &:before {
             position: absolute;
             left: 50%;
             height: 0;
@@ -431,11 +430,11 @@ footer{
             -webkit-transform: translate(-50%) scaleX(0);
             transform: translate(-50%) scaleX(0);
         }
-        &.active, &:hover {
+        &.active,
+        &:hover {
             &:before {
                 height: 2px;
                 opacity: 1;
-
                 -o-transform: translate(-50%) scaleX(1);
                 -ms-transform: translate(-50%) scaleX(1);
                 -moz-transform: translate(-50%) scaleX(1);
@@ -449,23 +448,24 @@ footer{
             margin-top: 11px;
             font-size: 23px;
         }
-        &.active, &:hover {
+        &.active,
+        &:hover {
             &:before {
                 opacity: 1;
             }
-            &.nav-home:before  {
+            &.nav-home:before {
                 background: #443fb5;
             }
-            &.nav-code:before  {
+            &.nav-code:before {
                 background: $code-color;
             }
-            &.nav-daily:before  {
+            &.nav-daily:before {
                 background: #FF9800;
             }
-            &.nav-demo:before  {
+            &.nav-demo:before {
                 background: $brand-inverse-color;
             }
-            &.nav-me:before  {
+            &.nav-me:before {
                 background: $brand-color;
             }
         }
@@ -475,7 +475,7 @@ footer{
         margin-top: -45px;
     }
     .banner-background {
-        background-size:auto 450px;
+        background-size: auto 450px;
     }
     .main {
         width: 90%;
@@ -493,20 +493,20 @@ footer{
         height: 45px;
         background: rgba(255, 255, 255, .94);
         background-position: bottom left;
-        box-shadow: 0 1px 3px rgba(0,0,0,.18);
-        -webkit-transition:height 0s, background .15s linear .1s;
-        transition:height 0s, background .15s linear .1s;
-
+        box-shadow: 0 1px 3px rgba(0, 0, 0, .18);
+        -webkit-transition: height 0s, background .15s linear .1s;
+        transition: height 0s, background .15s linear .1s;
         &.top {
             height: 100px;
             background: url(../images/head_top_mask.png) top left repeat-x transparent;
-            -webkit-transition:height 0s, background 0s;
-            transition:height 0s, background 0s;
+            -webkit-transition: height 0s, background 0s;
+            transition: height 0s, background 0s;
             box-shadow: none;
             .menu-item {
                 color: #fff;
                 text-shadow: 0 0 2px rgba(0, 0, 0, .64);
-                &.active:before, &:hover:before {
+                &.active:before,
+                &:hover:before {
                     background: #fff;
                     height: 1px;
                     bottom: 6px;
@@ -525,20 +525,20 @@ footer{
     }
 }
 
-@media screen and (min-width: 1024px) {
-    
-}
-@media screen and (min-width: 1280px) { 
+@media screen and (min-width: 1024px) {}
+
+@media screen and (min-width: 1280px) {
     .main {
         width: 1080px;
     }
-
 }
+
 @media screen and (min-width: 1366px) {
     .main {
         width: 1190px;
     }
 }
+
 @media screen and (min-width: 1440px) {
     .main {
         width: 1280px;

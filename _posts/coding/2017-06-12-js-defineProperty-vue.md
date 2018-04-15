@@ -2,7 +2,7 @@
 layout: post
 title:  从JavaScript属性描述器剖析Vue.js响应式视图
 date:   2017-06-12
-categories: coding
+categories: study
 tags: [JavaScript, vue]
 description: ''
 ---
